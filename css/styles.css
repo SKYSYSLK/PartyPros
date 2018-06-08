@@ -42,13 +42,15 @@ body {
 }
 
 .frame-content {
-	display: block;
+	display: flex;
 	margin: 5px;
+	/* border: 1px solid black;*/
 }
 
 /* block attributes */
 .block {
 	display: block;
+	margin: 0px 12px;
 	width: 200px;
 	height: 75px;
 	background-color: lightgray;
