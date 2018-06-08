@@ -1,0 +1,57 @@
+/* body tag attributes */
+body {
+	background-color: #D6EAF8;
+}
+
+/* page layout attributes */
+.page {
+	margin: 50px auto;
+	width: 700px;
+	/* height: 500px; */
+	background-color: #D5DBDB;
+	border: 1px solid #AAB7B8;
+	border-radius: 10px;
+}
+
+/* title bar attributes */
+.titlebar {
+	display: block;
+	margin: 5px;
+	height: 100px;
+	background-color: orange;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+}
+
+/* frame attributes */
+.frame {
+	display: block;
+	margin: 5px;
+	/*height: 100px;*/
+	background-color: lightblue;
+	border: 1px solid blue;
+	border-radius: 10px;
+}
+
+.frame-header {
+	display: block;
+	margin: 5px;
+	color: gray;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.frame-content {
+	display: block;
+	margin: 5px;
+}
+
+/* block attributes */
+.block {
+	display: block;
+	width: 200px;
+	height: 75px;
+	background-color: lightgray;
+	border: 1px solid black;
+	border-radius: 5px;
+}
