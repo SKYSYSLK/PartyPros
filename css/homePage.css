@@ -1,16 +1,3 @@
-body{
-	background-image:url("../Assets/backGround.jpg");
-	background-attachment: fixed;
-}
-.page {
-	margin: 50px auto;
-	width: 1200px;
-	/* height: 500px; */
-	background-color: rgba(0,0,0,0);
-	border: 1px solid #AAB7B8;
-	border-radius: 10px;
-}
-
 .header{
 	display: block;
 	margin: 5px;

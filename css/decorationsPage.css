@@ -1,0 +1,44 @@
+/* title bar attributes */
+.titlebar {
+	display: block;
+	margin: 5px;
+	height: 100px;
+	background-color: orange;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+}
+
+/* frame attributes */
+.frame {
+	display: block;
+	margin: 5px;
+	/*height: 100px;*/
+	background-color: lightblue;
+	border: 1px solid blue;
+	border-radius: 10px;
+}
+
+.frame-header {
+	display: block;
+	margin: 5px;
+	color: gray;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.frame-content {
+	display: flex;
+	margin: 5px;
+	/* border: 1px solid black;*/
+}
+
+/* block attributes */
+.block {
+	display: block;
+	margin: 0px 12px;
+	width: 200px;
+	height: 75px;
+	background-color: lightgray;
+	border: 1px solid black;
+	border-radius: 5px;
+}

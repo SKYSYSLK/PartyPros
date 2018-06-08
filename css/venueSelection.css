@@ -1,18 +1,3 @@
-/* body tag attributes */
-body {
-	background-color: #D6EAF8;
-}
-
-/* page layout attributes */
-.page {
-	margin: 50px auto;
-	width: 700px;
-	/* height: 500px; */
-	background-color: #D5DBDB;
-	border: 1px solid #AAB7B8;
-	border-radius: 10px;
-}
-
 /* title bar attributes */
 .titlebar {
 	display: block;
