@@ -1,0 +1,92 @@
+/* body tag attributes */
+body {
+	background-color: #D6EAF8;
+}
+
+/* page layout attributes */
+.page {
+	margin: 50px auto;
+	width: 700px;
+	/* height: 500px; */
+	background-color: #D5DBDB;
+	border: 1px solid #AAB7B8;
+	border-radius: 10px;
+}
+
+/* title bar attributes */
+.titlebar {
+	display: block;
+	margin: 5px;
+	height: 100px;
+	background-color: orange;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+}
+//form attributes
+.venue-select{
+    border-radius: 5px;
+    margin: auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+input{
+    display: block;
+    margin: auto;
+    height: 20%;
+    width: 50%;
+    padding: 10px 10px 10px 10px;   
+    background-color: gainsboro;
+    border:1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type=submit]:hover{
+    background-color: aqua;
+}
+lable{
+    display: block;
+    margin: auto;
+    height: 20%;
+    width: 50%;
+    padding: 5px;
+}
+
+
+
+/* frame attributes */
+.frame {
+	display: block;
+	margin: 5px;
+	/*height: 100px;*/
+	background-color: lightblue;
+	border: 1px solid blue;
+	border-radius: 10px;
+}
+
+.frame-header {
+	display: block;
+	margin: 5px;
+	color: gray;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.frame-content {
+	display: block;
+	margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+/* block attributes */
+.block {
+	display: inline-block;
+    margin: auto;
+	width: 30%;
+	height: 75px;
+	background-color: lightgray;
+	border: 1px solid black;
+	border-radius: 5px;
+}

@@ -1,14 +1,14 @@
 /* body tag attributes */
 body {
-	background-color: #D6EAF8;
+	background-image:url("../Assets/backGround.jpg");
+	background-attachment: fixed;
 }
 
 /* page layout attributes */
 .page {
 	margin: 50px auto;
-	width: 700px;
-	/* height: 500px; */
-	background-color: #D5DBDB;
+	width: 1200px;
+	background-color: rgba(0,0,0,0);
 	border: 1px solid #AAB7B8;
 	border-radius: 10px;
 }
