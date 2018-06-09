@@ -1,0 +1,56 @@
+/* title bar attributes */
+.titlebar {
+	display: block;
+	margin: 5px;
+	height: 100px;
+	background-color: orange;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+}
+
+.contact{
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+    background-color: rgba(255,255,255,0.8) ;
+    border: 0.5px solid gray;
+    box-sizing: border-box;
+}
+
+input:not([type=submit]){
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 80%;
+    padding: 10px 10px 10px 10px;   
+    background-color: white;
+    border:0.5px solid  gray;
+    box-sizing: border-box;
+    font-size: 1vw;
+}
+input[type=submit]{
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 80%;
+    padding: 10px 10px 10px 10px;   
+    background-color: green;
+    border:1px solid white;
+    box-sizing: border-box;
+    font-size: 1vw;
+    color: white;
+}
+textarea{
+    display: block;
+    margin: auto;
+    height: 100px;
+    width: 80%;
+    padding: 10px 10px 10px 10px;   
+    background-color: white;
+    border:0.5px solid  gray;
+    box-sizing: border-box;
+    font-size: 1vw;
+}
+input[type=submit]:hover{
+    background-color: yellow;
+}
