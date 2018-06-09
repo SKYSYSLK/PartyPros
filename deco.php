@@ -15,9 +15,9 @@
 			<div class="dropdown">
 			  <button class="dropbtn">Menu</button>
 			  <div class="dropdown-content">
-			    <a href="./HomePage.html">Home</a>
-			    <a href="./AboutUsPage.html">About us</a>
-			    <a href="./ContactUsPage.html">Contact us</a>
+			    <a href="./index.php">Home</a>
+			    <a href="./aboutus.php">About us</a>
+			    <a href="./contactus.php">Contact us</a>
 	  			</div>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 		</div>
 		<div class="right">
 			<div class="loginSignUp">
-			  <a href="./MyCartPage.html"><button class="loginSignUpbtn"> My Cart</button></a>
+			  <a href="./mycart.php"><button class="loginSignUpbtn"> My Cart</button></a>
 			</div>
 		</div>
 	</div>
@@ -67,8 +67,8 @@
 	<!--Footer-->
 	<div>
 		<div class="footer" style="background-color:rgba(255,255,0,0.4)">
-			<a href="./AboutUsPage.html">About Us</a>
-			<a href="./ContactUsPage.html">Contact Us</a>
+			<a href="./aboutus.php">About Us</a>
+			<a href="./contactus.php">Contact Us</a>
 		</div>
 	</div>
 
