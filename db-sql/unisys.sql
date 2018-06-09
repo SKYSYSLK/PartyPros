@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 09, 2018 at 02:35 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- Host: localhost
+-- Generation Time: Jun 09, 2018 at 02:40 AM
+-- Server version: 5.7.22-0ubuntu0.16.04.1
+-- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -96,6 +96,19 @@ CREATE TABLE `serviceimages` (
   `imageID` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `username` varchar(30) NOT NULL,
+  `password` varchar(70) NOT NULL,
+  `type` int(1) NOT NULL,
+  `user_id` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -139,6 +152,13 @@ ALTER TABLE `serviceimages`
   ADD PRIMARY KEY (`serviceID`,`imageID`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
+
+--
 -- Constraints for dumped tables
 --
 
@@ -154,6 +174,13 @@ ALTER TABLE `invoice`
 --
 ALTER TABLE `serviceimages`
   ADD CONSTRAINT `serviceimages_ibfk_1` FOREIGN KEY (`serviceID`) REFERENCES `service` (`serviceID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `client` (`clientID`),
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `customer` (`customerID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
