@@ -32,7 +32,7 @@
     </div>
             
     
-    <div class=footer>
+    <div class="footer">
         <footer class="venue-footer">Copyright &copy; SKY</footer>
     </div>
 </div> 

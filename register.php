@@ -15,6 +15,16 @@
 
 	<!-- Title bar -->
 	<div class="header">
+		<div class="left">
+            <div class="dropdown">
+              <button class="dropbtn">Menu</button>
+              <div class="dropdown-content">
+                <a href="./index.php">Home</a>
+                <a href="./aboutus.php">About us</a>
+                <a href="./contactus.php">Contact us</a>
+                </div>
+            </div>
+        </div>
 		<div class="siteTitle">
 			REGISTRATION
 			<div class="siteTitle" style="font-size:30px;margin-top:20px ">
