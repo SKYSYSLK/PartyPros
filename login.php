@@ -21,7 +21,7 @@
         
     </div>
     <div class="dont">
-        <lable id="signup">Don't you have a account? <a href="#">Sign Up Now</a></lable>
+        <lable id="signup">Don't you have a account? <a href="./register.php">Sign Up Now</a></lable>
     </div>
             
    
