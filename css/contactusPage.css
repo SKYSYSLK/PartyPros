@@ -1,0 +1,18 @@
+/*---------------Frame Styles start------------*/
+.frame {
+	display: block;
+	margin: 5px;
+	min-height: 300px;
+	background-color: lightblue;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+}
+
+.frame-content {
+	margin: 50px auto;
+	font-size: 22px;
+	text-align: center;
+	min-height: 250px;
+	max-width: 600px;
+}
+/*---------------Frame Styles end------------*/
