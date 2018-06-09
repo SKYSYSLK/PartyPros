@@ -11,15 +11,30 @@
 
 	<!-- Title bar -->
 	<div class="header">
+		<div class="left">
+			<div class="dropdown">
+			  <button class="dropbtn">Menu</button>
+			  <div class="dropdown-content">
+			    <a href="./HomePage.html">Home</a>
+			    <a href="./AboutUsPage.html">About us</a>
+			    <a href="./ContactUsPage.html">Contact us</a>
+	  			</div>
+			</div>
+		</div>
 		<div class="siteTitle">
-			DECORATIONS
+			EXTRAVAGANCE
 			<div class="siteTitle" style="font-size:30px;margin-top:20px ">
-				Proffessionals in Event Management
+				DECORATIONS
+			</div>
+		</div>
+		<div class="right">
+			<div class="loginSignUp">
+			  <a href="./MyCartPage.html"><button class="loginSignUpbtn"> My Cart</button></a>
 			</div>
 		</div>
 	</div>
 
-	<div class="frame">
+	<div class="frame" style="background-color:rgba(255,103,0,0.4);">
 		<div class="frame-header">Floral Decorations</div>
 		<div class="frame-content">
 			<div class="block">Shop 1</div>
@@ -29,7 +44,7 @@
 		<br>
 	</div>
 
-	<div class="frame">
+	<div class="frame" style="background-color:rgba(255,255,0,0.4)">
 		<div class="frame-header">Stage Setup</div>
 		<div class="frame-content">
 			<div class="block">Company 1</div>
@@ -39,7 +54,7 @@
 		<br>
 	</div>
 
-	<div class="frame">
+	<div class="frame" style="background-color:rgba(255,103,0,0.4)">
 		<div class="frame-header">Tents</div>
 		<div class="frame-content">
 			<div class="block">Company 1</div>
@@ -47,6 +62,14 @@
 			<div class="block">Company 3</div>
 		</div>
 		<br>
+	</div>
+
+	<!--Footer-->
+	<div>
+		<div class="footer" style="background-color:rgba(255,255,0,0.4)">
+			<a href="./AboutUsPage.html">About Us</a>
+			<a href="./ContactUsPage.html">Contact Us</a>
+		</div>
 	</div>
 
 </div>
