@@ -1,6 +1,6 @@
 /* body tag attributes */
 body {
-	background-image:url("../Assets/backGround.jpg");
+	background-image:url("../assets/backGround.jpg");
 	background-attachment: fixed;
 }
 
@@ -28,5 +28,3 @@ body {
 	font-size: 70px;
 	color: black;
 }
-
-/*---------------------------------*/
