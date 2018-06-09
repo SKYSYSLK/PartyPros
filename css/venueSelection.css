@@ -1,13 +1,3 @@
-/* title bar attributes */
-.titlebar {
-	display: block;
-	margin: 5px;
-	height: 100px;
-	background-color: orange;
-	border: 1px solid darkorange;
-	border-radius: 10px;
-}
-
 .venue-select{
     border-radius: 5px;
     margin: auto;

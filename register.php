@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Decorations</title>
+	<title>Registration</title>
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
-	<link rel="stylesheet" type="text/css" href="./css/RegistrationPage.css">
+	<link rel="stylesheet" type="text/css" href="./css/registrationPage.css">
 	<link rel="stylesheet" type="text/css" href="./css/homePage.css">
 	<script src="./javaScript/register.js" type="text/javascript"></script>
 
