@@ -17,17 +17,17 @@
 			<div class="dropdown">
 			  <button class="dropbtn">Menu</button>
 			  <div class="dropdown-content">
-			    <a href="./HomePage.html">Home</a>
-			    <a href="./AboutUsPage.html">About us</a>
-			    <a href="./ContactUsPage.html">Contact us</a>
+			    <a href="./index.php">Home</a>
+			    <a href="./aboutus.php">About us</a>
+			    <a href="./contactus.php">Contact us</a>
 	  			</div>
 			</div>
 		</div>
 	<!-- Login and SignUp Buttons -->
 		<div class="right">
 			<div class="loginSignUp">
-			  <a href="./LoginPage.html"><button class="loginSignUpbtn"> Login</button></a>
-			  <a href="./RegisterPage.html"><button class="loginSignUpbtn"> Register</button></a>
+			  <a href="./login.php"><button class="loginSignUpbtn"> Login</button></a>
+			  <a href="./register.php"><button class="loginSignUpbtn"> Register</button></a>
 			</div>
 		</div>
 	<!--Site Title -->
@@ -39,7 +39,7 @@
 		</div>
 		<div class="right">
 			<div class="loginSignUp">
-			  <a href="./MyCartPage.html"><button class="loginSignUpbtn"> My Cart</button></a>
+			  <a href="./mycart.php"><button class="loginSignUpbtn"> My Cart</button></a>
 			</div>
 		</div>
 	</div>
@@ -47,32 +47,32 @@
 	<!--subTopics-->
 	<div class="subTopicsFrame" style="background-color:rgba(255,103,0,0.4);">
 		<div class="subTopics">
-			<a href="./VenueSelection.html">Venue Selection</a>
+			<a href="./venueselection.php">Venue Selection</a>
 		</div>
 	</div>
 
 	<div class="subTopicsFrame" style="background-color:rgba(255,255,0,0.4)">
 		<div class="subTopics">
-			<a href="./DecorationsPage.html">Decorations</a>
+			<a href="./deco.php">Decorations</a>
 		</div>
 	</div>
 
 	<div class="subTopicsFrame" style="background-color:rgba(255,103,0,0.4)">
 		<div class="subTopics">
-			<a href="./EntertainmentsPage.html">Entertainments</a>
+			<a href="./entertainment.php">Entertainments</a>
 		</div>
 	</div>
 
 	<div class="subTopicsFrame" style="background-color:rgba(255,255,0,0.4)">
 		<div class="subTopics">
-			<a href="./CateringPage.html">Catering</a>
+			<a href="./catering.php">Catering</a>
 		</div>
 	</div>
 	<!--Footer-->
 	<div>
 		<div class="footer" style="background-color:rgba(255,255,0,0.4)">
-			<a href="./AboutUsPage.html">About Us</a>
-			<a href="./ContactUsPage.html">Contact Us</a>
+			<a href="./aboutus.php">About Us</a>
+			<a href="./contactus.php">Contact Us</a>
 		</div>
 	</div>
 
