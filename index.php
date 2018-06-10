@@ -38,6 +38,14 @@ session_start();
 			  <a href='./register.php'><button class='loginSignUpbtn'> Register</button></a>
 			</div>
 		</div>";
+	}else{
+		echo"
+		<div class='right'>
+			<div class='loginSignUp'>
+			  <a href='./logout.php'><button class='loginSignUpbtn'> Logout</button></a>
+			</div>
+		</div>
+		";
 	}
 	?>
 	<!--Site Title -->

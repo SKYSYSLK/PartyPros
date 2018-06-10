@@ -15,7 +15,7 @@ elseif(isset($_POST['login'])){
 
     $query="SELECT * FROM users WHERE username='$username' AND password='$password' LIMIT 1";
 
-    echo $query;
+    //echo $query;
     $userquery=mysqli_query($connection,$query);
 
     if(mysqli_num_rows($userquery)>0){
@@ -27,7 +27,7 @@ elseif(isset($_POST['login'])){
             echo "Client";
         }
         else{
-            echo "customer";
+            header("location: index.php");
         }
 
     }else{
