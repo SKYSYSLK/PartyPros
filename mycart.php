@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +49,7 @@
 
 </div>
 </body>
+</html>
 =======
 <?php
 
@@ -60,4 +60,3 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 }
 
 ?>
->>>>>>> master
