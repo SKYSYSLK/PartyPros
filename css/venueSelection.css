@@ -1,41 +1,45 @@
-/* title bar attributes */
-.titlebar {
-	display: block;
-	margin: 5px;
-	height: 100px;
-	background-color: orange;
-	border: 1px solid darkorange;
-	border-radius: 10px;
-}
-//form attributes
 .venue-select{
-    border-radius: 5px;
     margin: auto;
-    background-color: #f2f2f2;
     padding: 20px;
+    width: 50%;
+    background-color: rgba(255,255,255,0.8) ;
+    border: 2px solid gray;
     box-sizing: border-box;
 }
 
-input{
+input:not([type=submit]){
     display: block;
     margin: auto;
-    height: 20%;
-    width: 50%;
+    height: 60px;
+    width: 80%;
     padding: 10px 10px 10px 10px;   
-    background-color: gainsboro;
-    border:1px solid black;
-    border-radius: 5px;
+    background-color: white;
+    border:1px solid  gray;
     box-sizing: border-box;
 }
+input[type=submit]{
+    display: block;
+    margin: auto;
+    height: 60px;
+    width: 80%;
+    padding: 10px 10px 10px 10px;   
+    background-color: green;
+    border:1px solid white;
+    box-sizing: border-box;
+    font-size: 1.1vw;
+    color: white;
+}
+
 input[type=submit]:hover{
-    background-color: aqua;
+    background-color: yellow;
 }
 lable{
     display: block;
     margin: auto;
     height: 20%;
-    width: 50%;
+    width: 80%;
     padding: 5px;
+    font-size: 1.5vw;
 }
 
 
@@ -45,24 +49,28 @@ lable{
 	display: block;
 	margin: 5px;
 	/*height: 100px;*/
-	background-color: lightblue;
-	border: 1px solid blue;
+	background-color: transparent;
+	border: 1px solid gray;
 	border-radius: 10px;
 }
 
 .frame-header {
 	display: block;
-	margin: 5px;
+	margin: auto;
 	color: gray;
 	font-size: 24px;
 	font-weight: bold;
+    padding: 5px;
 }
 
 .frame-content {
-	display: block;
+	
 	margin: auto;
     width: 100%;
-    padding: 10px;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* block attributes */
@@ -70,8 +78,10 @@ lable{
 	display: inline-block;
     margin: auto;
 	width: 30%;
-	height: 75px;
-	background-color: lightgray;
+    height: 300px;
+	background-color: yellow;
 	border: 1px solid black;
 	border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
 }

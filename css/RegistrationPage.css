@@ -1,0 +1,95 @@
+
+.subheader{
+    display: block;
+    margin: 5px;
+    min-height: 250px;
+    background-color: rgba(255,255,0,0.6);
+    border: 1px solid darkorange;
+    border-radius: 10px;
+}
+
+.right {
+    float: right;
+    padding: 10px;
+}
+
+.subRegTopics{
+    text-align: left;
+    margin-left: 30px;
+    font-size: 45px;
+    margin-top: 40px;
+}
+
+.regbtn{
+    background-color:rgba(255,108,182,0.6);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    position: absolute;
+    margin-left: 700px;
+}
+
+.regbtn:hover{
+    background-color: #3e8e41;
+}
+
+.regbtn a{
+    color: black;
+    text-decoration: none;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.form {
+    display: block;
+    padding: 20px;
+    margin: 5px;
+    min-height: 300px;
+    background-color: rgba(255,255,0,0.6);
+    border: 1px solid darkorange;
+    border-radius: 10px;
+}

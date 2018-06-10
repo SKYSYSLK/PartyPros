@@ -59,13 +59,14 @@
 
 	<div class="subTopicsFrame" style="background-color:rgba(255,103,0,0.4)">
 		<div class="subTopics">
+
 			<a href="./entertainment.php">Entertainments</a>
 		</div>
 	</div>
 
 	<div class="subTopicsFrame" style="background-color:rgba(255,255,0,0.4)">
 		<div class="subTopics">
-			<a href="./catering.php">Catering</a>
+			<a href="./entandcatering.php#catering_section">Catering</a>
 		</div>
 	</div>
 	<!--Footer-->
