@@ -5,6 +5,7 @@ require_once('inc/config.php');
 // Get all Clients
 $clientquery="SELECT * FROM clients";
 $clientcon=mysqli_query($connection,$clientquery);
+// $clints=mysqli_fetch_array($clientcon, MYSQLI_ASSOC);
 
 // Get all customers
 $cusotmerquery="SELECT * FROM customers";
@@ -13,12 +14,10 @@ $customercon=mysqli_query($connection, $cusotmerquery);
 // Get all Services
 $servicequery="SELECT * FROM services";
 $servicecon=mysqli_query($connection, $servicequery);
-$services=mysqli_fetch_array($servicecon, MYSQLI_ASSOC);
 
 // Get all Orders
 $orderquery="SELECT * FROM invoices";
 $ordercon=mysqli_query($connection, $orderquery);
-$orders=mysqli_fetch_array($ordercon, MYSQLI_ASSOC);
 
 // Get all Admin users
 $adminquery="SELECT * FROM users WHERE type=0";
@@ -44,8 +43,8 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		<div id="tabClients" class="tab" onclick="showTable(1)">Clients</div>
 		<div id="tabCustomers" class="tab" onclick="showTable(2)">Customers</div>
 		<div id="tabServices" class="tab" onclick="showTable(3)">Services</div>
-		<div id="tabAdmins" class="tab" onclick="showTable(4)">Admins</div>
 		<div id="tabOrders" class="tab" onclick="showTable(5)">Orders</div>
+		<div id="tabAdmins" class="tab" onclick="showTable(4)">Admins</div>
 	</div>
 
 	<div class="table-panel right">
@@ -69,25 +68,18 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 					if(mysqli_num_rows($clientcon)>0){
 						while($client=mysqli_fetch_assoc($clientcon)){
 							$row=$row."<tr>
-								<td>".$client['clientName']."</td>
-								<td>".$client['clientEmail']."</td>
-								<td>".$client['clientContact']."</td>
-								<td></td>
+								<td>$client[clientName]</td>
+								<td>$client[clientEmail]</td>
+								<td>$client[clientContact]</td>
+								<td>
+									<button>EDIT</button>
+									<button>DELETE</button>
+								</td>
 							</tr>";
-							echo $row;
 						}
+						echo $row;
 					}
 				?>
-				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td>
-						<button>ADD</button>
-						<button>EDIT</button>
-						<button>DELETE</button>
-					</td>
-				</tr>
 			</table>
 		</div>
 
@@ -106,25 +98,18 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 					if(mysqli_num_rows($customercon)>0){
 						while($customer=mysqli_fetch_assoc($customercon)){
 							$row=$row."<tr>
-								<td>".$customer['customerName']."</td>
-								<td>".$customer['customerEmail']."</td>
-								<td>".$customer['customerContact']."</td>
-								<td></td>
+								<td>$customer[customerName]</td>
+								<td>$customer[customerEmail]</td>
+								<td>$customer[customerContact].</td>
+								<td>
+									<button>EDIT</button>
+									<button>DELETE</button>
+								</td>
 							</tr>";
-							echo $row;
 						}
+						echo $row;
 					}
 				?>
-				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td>
-						<button>ADD</button>
-						<button>EDIT</button>
-						<button>DELETE</button>
-					</td>
-				</tr>
 			</table>
 		</div>
 
@@ -132,22 +117,62 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 			<div class="table-title">Services Managing</div>
 			<table>
 				<tr>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Contact</th>
+					<th>ID</th>
+					<th>Type</th>
+					<th>Description</th>
 					<th>Action</th>
 				</tr>
 				<!--Get table data from the DB-->
+				<?php
+					$row="";
+					if(mysqli_num_rows($servicecon)>0){
+						while($service=mysqli_fetch_assoc($servicecon)){
+							$row=$row."<tr>
+								<td>$service[serviceID]</td>
+								<td>$service[serviceType]</td>
+								<td>$service[serviceDescription]</td>
+								<td>
+									<button>EDIT</button>
+									<button>DELETE</button>
+								</td>
+							</tr>";
+						}
+						echo $row;
+					}
+				?>
+			</table>
+		</div>
+
+		<div id="order_table" style="display: none;">
+			<div class="table-title">Orders Managing</div>
+			<table>
 				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td>
-						<button>ADD</button>
-						<button>EDIT</button>
-						<button>DELETE</button>
-					</td>
+					<th>Item</th>
+					<th>Customer</th>
+					<th>count</th>
+					<th>price</th>
+					<th>Action</th>
 				</tr>
+				<!--Get table data from the DB-->
+				<?php
+					$row="";
+					if(mysqli_num_rows($ordercon)>0){
+						while($order=mysqli_fetch_assoc($ordercon)){
+							// var_dump($order);
+							$row=$row."<tr>
+								<td>".$order['invoiceId']."</td>
+								<td>".$order['itemID']."</td>
+								<td>".$order['customerID']."</td>
+								<td>".$order['itemCount']."</td>
+								<td>
+									<button>EDIT</button>
+									<button>DELETE</button>
+								</td>
+							</tr>";
+						}
+						echo $row;
+					}
+				?>
 			</table>
 		</div>
 
@@ -156,44 +181,24 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 			<table>
 				<tr>
 					<th>Name</th>
-					<th>Email</th>
-					<th>Contact</th>
 					<th>Action</th>
 				</tr>
 				<!--Get table data from the DB-->
-				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td>
-						<button>ADD</button>
-						<button>EDIT</button>
-						<button>DELETE</button>
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<div id="order_table" style="display: none;">
-			<div class="table-title">Orders Managing</div>
-			<table>
-				<tr>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Contact</th>
-					<th>Action</th>
-				</tr>
-				<!--Get table data from the DB-->
-				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td>
-						<button>ADD</button>
-						<button>EDIT</button>
-						<button>DELETE</button>
-					</td>
-				</tr>
+				<?php
+					$row="";
+					if(mysqli_num_rows($admincon)>0){
+						while($admin=mysqli_fetch_assoc($admincon)){
+							$row=$row."<tr>
+								<td>$admin[username]</td>
+								<td>
+									<button>EDIT</button>
+									<button>DELETE</button>
+								</td>
+							</tr>";
+							echo $row;
+						}
+					}
+				?>
 			</table>
 		</div>
 
