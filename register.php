@@ -1,3 +1,69 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION['usertype'])){
+    header("location: index.php");
+}
+
+// Check if Submit button is pressed
+if(isset($_POST['client'])||isset($_POST['customer'])){
+
+	require_once('inc/config.php');
+
+	$name=$_POST['fullname'];
+	$email=$_POST['email'];
+	$contact=$_POST['contactNo'];
+	$username=$_POST['userName'];
+	$password=$_POST['password'];
+
+	// Hash the password
+	$password=md5($password);
+
+// if Client Registation is submitted
+	if(isset($_POST['client'])){
+
+		// Mysql Query
+		$query="INSERT INTO clients (clientName, clientEmail, clientContact) VALUES ('$name','$email','$contact')";
+
+		//echo $query;
+
+		$insquery=mysqli_query($connection,$query);
+
+		$user_id=mysqli_insert_id($connection);
+		$userquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password','1','$user_id')";
+		//echo $userquery;
+		$insuser=mysqli_query($connection,$userquery);
+
+		if($insquery&&$insuser){
+			echo "<script>alert('Successfully Saved')</script>";
+			header("location: login.php");
+		}
+
+// if Customer Registation is submitted
+	}elseif(isset($_POST['customer'])){
+		$query="INSERT INTO customers (customerName, customerEmail, customerContact) VALUES ('$name','$email','$contact')";
+
+		// echo $query;
+
+		$insquery=mysqli_query($connection,$query);
+
+		$user_id=mysqli_insert_id($connection);
+		$userquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password','2','$user_id')";
+		//echo $userquery;
+		$insuser=mysqli_query($connection,$userquery);
+
+		if($insquery&&$insuser){
+			echo "<script>alert('Successfully Saved')</script>";
+			header("location: login.php");
+		}
+	}
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,12 +112,12 @@
 	</div>
 <!-- Client form-->
 	<div id="div1" class="form" style="display: none;">
-	  <form action="/action_page.php">
+	  <form action="register.php" method="POST">
 	    <label for="fname">Full Name</label>
 	    <input type="text" id="fname" name="fullname" placeholder="Your name..">
 
 	    <label for="email">Email Address</label>
-	    <input type="text" id="email" name="email" placeholder="email address..">
+	    <input type="email" id="email" name="email" placeholder="email address..">
 
 	    <label for="contactNo">Contact No</label>
 	    <input type="text" id="contactNo" name="contactNo" placeholder="contact No..">
@@ -62,18 +128,18 @@
 	    <label for="password">Password</label>
 	    <input type="password" id="password" name="password" placeholder="password..">
 
-	    <input type="submit" value="Submit">
+	    <input type="submit" value="Submit" name="client">
 	  </form>
 </div>
 <!-- Customer form-->
 
-<div id="div2" class="form" style="display: none;>
-	  <form action="/action_page.php">
+<div id="div2" class="form" style="display: none;">
+	  <form action="register.php" method="POST">
 	    <label for="fname">Full Name Client</label>
 	    <input type="text" id="fname" name="fullname" placeholder="Your name..">
 
 	    <label for="email">Email Address</label>
-	    <input type="text" id="email" name="email" placeholder="email address..">
+	    <input type="email" id="email" name="email" placeholder="email address..">
 
 	    <label for="contactNo">Contact No</label>
 	    <input type="text" id="contactNo" name="contactNo" placeholder="contact No..">
@@ -84,7 +150,7 @@
 	    <label for="password">Password</label>
 	    <input type="password" id="password" name="password" placeholder="password..">
 
-	    <input type="submit" value="Submit">
+	    <input type="submit" value="Submit" name="customer">
 	  </form>
 </div>
 
