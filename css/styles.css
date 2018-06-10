@@ -4,7 +4,7 @@ body {
 	background-attachment: fixed;
 }
 
-/* page layout attributes */
+/*---------------Page Styles start------------*/
 .page {
 	margin: 50px auto;
 	width: 1200px;
@@ -29,7 +29,82 @@ body {
 	color: black;
 }
 
-/*footer menu*/
+.left{
+	float: left;
+	padding: 10px;
+}
+
+.right {
+    float: right;
+    padding: 10px;
+}
+/*---------------Page Styles end------------*/
+
+/*---------------Drop down Menu Styles start------------*/
+.dropbtn {
+    background-color:rgba(255,108,182,0.6);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+/*-----DropDown menu Styles End-------*/
+
+/*---------------Login and Signup button Styles start------------*/
+.loginSignUpbtn{
+	background-color:rgba(255,108,182,0.6);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.loginSignUp{
+	 position: relative;
+    display: inline-block;
+}
+
+.loginSignUpbtn:hover{
+    background-color: #3e8e41;
+}
+
+.loginSignUpbtn a{
+	color: black;
+	text-decoration: none;
+}
+/*---------------Login and Signup button Styles end------------*/
+
+/*---------------Footer Menu Styles start------------*/
 .footer{
 	display: block;
 	margin: 5px;
@@ -50,3 +125,4 @@ body {
 .footer a:hover{
 	color: green;
 }
+/*---------------Footer Menu Styles start------------*/

@@ -1,0 +1,25 @@
+/* title bar attributes */
+.sitetitle {
+	display: block;
+	margin: 5px;
+	height: 10px;
+	background-color: orange;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+}
+
+.about{
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+    height: 200px;
+    background-color: rgba(255,255,255,0.8) ;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+p{
+    text-align: center;
+    box-sizing: border-box;
+}

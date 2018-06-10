@@ -1,0 +1,52 @@
+/*---------------Frame Styles start------------*/
+.frame {
+	display: block;
+	margin: 5px;
+	min-height: 200px;
+	background-color: lightblue;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+}
+
+.frame-content {
+	display: block;
+	margin: 30px 20px;
+}
+/*---------------Frame Styles end------------*/
+
+/*---------------Block Styles start------------*/
+.block {
+	display: block;
+	margin: 10px;
+	padding-left: 50px;
+	text-align: left;
+	min-height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	background-color: rgba(255,255,255,0.4);
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.block:hover {
+	font-size: 21px;
+	background-color: rgba(255,255,255,0.6);
+	border: 1px solid gray;
+}
+/*---------------Block Styles end------------*/
+
+/*---------------Button Styles start------------*/
+.btn{
+	background-color:rgba(255,108,182,0.6);
+	min-width: 200px;
+	margin: 0px 40px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.btn:hover{
+    background-color: #3e8e41;
+}
+/*---------------Button Styles end------------*/

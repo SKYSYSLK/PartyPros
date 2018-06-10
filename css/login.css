@@ -1,70 +1,92 @@
 /* title bar attributes */
-.titlebar {
-	display: block;
-	margin: 5px;
-	height: 100px;
-	background-color: orange;
-	border: 1px solid darkorange;
-	border-radius: 10px;
+body {
+	background-image:url("../assets/backGround.jpg");
+	background-attachment: fixed;
+    
+    vertical-align: middle;
 }
-
+.page{
+    display: block;
+    margin: auto;
+    align-items: center;
+    
+}
 .login{
     display: block;
-    border: 1px solid gray;
-    border-radius: 5px;
-    margin: auto    ;
-    width: 50%;
-    height: 350px;
+    border: 2px solid gray;
+    margin: auto;
+    width: 30%;
+    height: 500px;
+    background-color: rgba(255,255,255,0.8);
     padding: 10px 10px 10px 10px;
+    vertical-align: middle;
+    
     
 }
 
 input:not([type=submit]){
     display: block;
     margin: auto;
-    height: 50px;
-    width: 80%;
+    height: 60px;
+    width: 90%;
     padding: 10px 10px 10px 10px;   
     background-color: white;
-    border:1px solid  gray;
-    border-radius: 5px;
+    border:1.5px solid  #8D977B;
     box-sizing: border-box;
+    font-size: 1vw;
 }
 input[type=submit]{
-    display: block;
+    display: inline-block;
     margin: auto;
-    height: 70px;
-    width: 80%;
-    padding: 10px 10px 10px 10px;   
-    background-color: 249, 252, 8,0.8;
+    height: 50px;
+    width: 100px;
+    background-color: green;
     border:1px solid white;
-    border-radius: 10px;
     box-sizing: border-box;
     font-size: 1.5vw;
     color: white;
 }
 
 input[type=submit]:hover{
-    background-color: yellow;
+    background-color: #009900;
 }
 
-lable{
+#formname{
     display: block;
     margin: auto;
-    height: 20%;
+    font-size: 2vw;
     padding: 20px;
-    font-size: 3vw;
+    width: inherit;
     box-sizing: border-box;
+    text-align: center;
 }
-
-.footer{
-    display: block;
-    border: 1px solid gray;
-    border-radius: 0;
+#forgot{
+    display: inline-block;
     margin: auto;
-    width: 100%;
-    height: 350px;
+    font-size: 1.2vw;
+    box-sizing: border-box;
+    text-align: right;
     
 }
+.dont{
+    display: block;
+    margin: auto;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    
+}
+#signup{
+    display: block;
+    margin: auto;
+    width: 300px;
+    font-size: 1.5vw;
+    box-sizing: border-box;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+
 
 

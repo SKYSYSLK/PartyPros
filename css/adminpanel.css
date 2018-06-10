@@ -1,0 +1,42 @@
+.page {
+	background-color: rgba(0,100,100,0.4);
+	min-height: 500px;
+}
+
+/*-------------------Tab Panel Styles start--------------------*/
+.tab-panel {
+	margin: 30px;
+	min-width: 300px;
+	min-height: 400px;
+}
+
+.tab-panel * {
+	border: 1px solid lightblue;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.tab-header {
+	min-height: 100px;
+	line-height: 100px;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: rgba(255,255,0,0.6);
+}
+
+.tab {
+	margin: 10px 0px;
+	min-height: 40px;
+	line-height: 40px;
+	font-size: 22px;
+	background-color: rgba(255,255,255,0.4);
+}
+
+.tab:hover {
+	font-size: 24px;
+	background-color: rgba(255,255,255,0.8);
+}
+/*-------------------Tab Panel Styles end--------------------*/
+
+
+

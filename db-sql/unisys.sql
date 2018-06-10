@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 09, 2018 at 02:40 AM
--- Server version: 5.7.22-0ubuntu0.16.04.1
--- PHP Version: 7.0.30-0ubuntu0.16.04.1
+-- Host: 127.0.0.1
+-- Generation Time: Jun 10, 2018 at 11:00 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.1.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,17 +19,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `unisys`
+-- Database: `partypro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `client`
+-- Table structure for table `clients`
 --
 
-CREATE TABLE `client` (
-  `clientID` varchar(30) NOT NULL,
+CREATE TABLE `clients` (
+  `clientID` int(30) NOT NULL,
   `clientName` varchar(100) NOT NULL,
   `clientEmail` varchar(100) NOT NULL,
   `clientContact` varchar(20) NOT NULL,
@@ -37,11 +39,11 @@ CREATE TABLE `client` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Table structure for table `customers`
 --
 
-CREATE TABLE `customer` (
-  `customerID` varchar(30) NOT NULL,
+CREATE TABLE `customers` (
+  `customerID` int(30) NOT NULL,
   `customerName` varchar(100) NOT NULL,
   `customerEmail` varchar(100) NOT NULL,
   `customerContact` varchar(20) DEFAULT NULL
@@ -50,39 +52,27 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `invoice`
+-- Table structure for table `invoices`
 --
 
-CREATE TABLE `invoice` (
+CREATE TABLE `invoices` (
   `invoiceId` varchar(30) NOT NULL,
   `itemID` varchar(30) NOT NULL,
-  `customerID` varchar(30) NOT NULL,
+  `customerID` int(30) NOT NULL,
   `itemCount` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `item`
+-- Table structure for table `items`
 --
 
-CREATE TABLE `item` (
+CREATE TABLE `items` (
   `itemID` varchar(30) NOT NULL,
   `itemName` varchar(100) NOT NULL,
   `itemType` varchar(100) NOT NULL,
   `itemPrice` decimal(8,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `service`
---
-
-CREATE TABLE `service` (
-  `serviceID` varchar(30) NOT NULL,
-  `serviceType` varchar(100) NOT NULL,
-  `serviceDescription` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -99,6 +89,18 @@ CREATE TABLE `serviceimages` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `serviceID` varchar(30) NOT NULL,
+  `serviceType` varchar(100) NOT NULL,
+  `serviceDescription` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -106,7 +108,7 @@ CREATE TABLE `users` (
   `username` varchar(30) NOT NULL,
   `password` varchar(70) NOT NULL,
   `type` int(1) NOT NULL,
-  `user_id` varchar(30) NOT NULL
+  `user_id` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -114,36 +116,30 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `client`
+-- Indexes for table `clients`
 --
-ALTER TABLE `client`
+ALTER TABLE `clients`
   ADD PRIMARY KEY (`clientID`);
 
 --
--- Indexes for table `customer`
+-- Indexes for table `customers`
 --
-ALTER TABLE `customer`
+ALTER TABLE `customers`
   ADD PRIMARY KEY (`customerID`);
 
 --
--- Indexes for table `invoice`
+-- Indexes for table `invoices`
 --
-ALTER TABLE `invoice`
+ALTER TABLE `invoices`
   ADD PRIMARY KEY (`invoiceId`,`itemID`),
   ADD KEY `itemID` (`itemID`),
   ADD KEY `customerID` (`customerID`);
 
 --
--- Indexes for table `item`
+-- Indexes for table `items`
 --
-ALTER TABLE `item`
+ALTER TABLE `items`
   ADD PRIMARY KEY (`itemID`);
-
---
--- Indexes for table `service`
---
-ALTER TABLE `service`
-  ADD PRIMARY KEY (`serviceID`);
 
 --
 -- Indexes for table `serviceimages`
@@ -152,35 +148,49 @@ ALTER TABLE `serviceimages`
   ADD PRIMARY KEY (`serviceID`,`imageID`);
 
 --
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`serviceID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`username`),
-  ADD UNIQUE KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `clientID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `customerID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `invoice`
+-- Constraints for table `invoices`
 --
-ALTER TABLE `invoice`
-  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `invoices`
+  ADD CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`itemID`) REFERENCES `items` (`itemID`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `serviceimages`
 --
 ALTER TABLE `serviceimages`
-  ADD CONSTRAINT `serviceimages_ibfk_1` FOREIGN KEY (`serviceID`) REFERENCES `service` (`serviceID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `client` (`clientID`),
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `customer` (`customerID`);
+  ADD CONSTRAINT `serviceimages_ibfk_1` FOREIGN KEY (`serviceID`) REFERENCES `services` (`serviceID`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
