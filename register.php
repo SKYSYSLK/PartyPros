@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+
+if(isset($_SESSION['usertype'])){
+    header("location: index.php");
+}
+
 // Check if Submit button is pressed
 if(isset($_POST['client'])||isset($_POST['customer'])){
 
@@ -11,7 +18,7 @@ if(isset($_POST['client'])||isset($_POST['customer'])){
 	$password=$_POST['password'];
 
 	// Hash the password
-	$password=md5(password);
+	$password=md5($password);
 
 // if Client Registation is submitted
 	if(isset($_POST['client'])){
@@ -19,12 +26,13 @@ if(isset($_POST['client'])||isset($_POST['customer'])){
 		// Mysql Query
 		$query="INSERT INTO clients (clientName, clientEmail, clientContact) VALUES ('$name','$email','$contact')";
 
-		echo $query;
+		//echo $query;
 
 		$insquery=mysqli_query($connection,$query);
 
 		$user_id=mysqli_insert_id($connection);
 		$userquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password','1','$user_id')";
+		echo $userquery;
 		$insuser=mysqli_query($connection,$userquery);
 
 		if($insquery&&$insuser){
@@ -32,15 +40,17 @@ if(isset($_POST['client'])||isset($_POST['customer'])){
 			header("location: login.php");
 		}
 
+// if Customer Registation is submitted
 	}elseif(isset($_POST['customer'])){
 		$query="INSERT INTO customers (customerName, customerEmail, customerContact) VALUES ('$name','$email','$contact')";
 
-		echo $query;
+		// echo $query;
 
 		$insquery=mysqli_query($connection,$query);
 
 		$user_id=mysqli_insert_id($connection);
 		$userquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password','2','$user_id')";
+		//echo $userquery;
 		$insuser=mysqli_query($connection,$userquery);
 
 		if($insquery&&$insuser){

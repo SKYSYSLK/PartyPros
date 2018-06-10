@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,12 +29,17 @@
 			</div>
 		</div>
 	<!-- Login and SignUp Buttons -->
-		<div class="right">
-			<div class="loginSignUp">
-			  <a href="./login.php"><button class="loginSignUpbtn"> Login</button></a>
-			  <a href="./register.php"><button class="loginSignUpbtn"> Register</button></a>
+	<?php
+	if(!isset($_SESSION["usertype"])){
+		echo "
+		<div class='right'>
+			<div class='loginSignUp'>
+			  <a href='./login.php'><button class='loginSignUpbtn'> Login</button></a>
+			  <a href='./register.php'><button class='loginSignUpbtn'> Register</button></a>
 			</div>
-		</div>
+		</div>";
+	}
+	?>
 	<!--Site Title -->
 		<div class="siteTitle">
 			EXTRAVAGANCE
