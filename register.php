@@ -32,7 +32,7 @@ if(isset($_POST['client'])||isset($_POST['customer'])){
 
 		$user_id=mysqli_insert_id($connection);
 		$userquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password','1','$user_id')";
-		echo $userquery;
+		//echo $userquery;
 		$insuser=mysqli_query($connection,$userquery);
 
 		if($insquery&&$insuser){
