@@ -42,8 +42,8 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		<div id="tabClients" class="tab" onclick="showTable(1)">Clients</div>
 		<div id="tabCustomers" class="tab" onclick="showTable(2)">Customers</div>
 		<div id="tabServices" class="tab" onclick="showTable(3)">Services</div>
-		<div id="tabAdmins" class="tab" onclick="showTable(4)">Admins</div>
 		<div id="tabOrders" class="tab" onclick="showTable(5)">Orders</div>
+		<div id="tabAdmins" class="tab" onclick="showTable(4)">Admins</div>
 	</div>
 
 	<div class="table-panel right">
@@ -62,7 +62,6 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 					<th>Action</th>
 				</tr>
 				<!--Get table data from the DB-->
-<<<<<<< HEAD
 				<tr>
 					<td>Client 01</td>
 					<td></td>
@@ -74,7 +73,6 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 					</td>
 				</tr>
 				<!------------------->
-=======
 				<?php
 					$row="";
 					if(mysqli_num_rows($clientcon)>0){
@@ -92,7 +90,6 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 						echo $row;
 					}
 				?>
->>>>>>> master
 			</table>
 		</div>
 
