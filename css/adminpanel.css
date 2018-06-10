@@ -6,6 +6,7 @@
 /*-------------------Tab Panel Styles start--------------------*/
 .tab-panel {
 	margin: 30px;
+	margin-right: 0px;
 	min-width: 300px;
 }
 
@@ -29,6 +30,7 @@
 	line-height: 40px;
 	font-size: 22px;
 	background-color: rgba(255,255,255,0.4);
+	cursor: pointer;
 }
 
 .tab:hover {
@@ -37,10 +39,11 @@
 }
 /*-------------------Tab Panel Styles end--------------------*/
 
-/*-------------------Table Styles start--------------------*/
+/*-------------------Table Styles start----------------------*/
 .table-panel {
 	margin: 35px;
-	min-width: 700px;
+	margin-left: 0px;
+	min-width: 750px;
 	min-height: 400px;
 	border: 1px solid lightblue;
 	border-radius: 10px;
@@ -48,9 +51,10 @@
 }
 
 .table-title {
-	margin: 20px;
+	margin: 20px 12px;
 	text-align: center;
 	font-size: 28px;
+	background-color: rgba(255,255,100,0.6);
 }
 
 table,th,td {
@@ -59,7 +63,7 @@ table,th,td {
 
 table {
 	margin: 0px auto;
-	width: 650px;
+	width: 730px;
 	background: rgba(255,255,255,0.3);
 }
 
@@ -77,6 +81,21 @@ td {
 	padding-left: 5px;
 }
 
+td button {
+	width: 55px;
+	height: 20px;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+}
+
+td button:hover {
+	background-color: blue;
+}
+/*-------------------Table Styles end----------------------*/
+
 /*---------------Welcome Panel Styles start-----------------*/
 #welcome_panel {
 	text-align: center;
@@ -84,3 +103,4 @@ td {
 	line-height: 400px;
 	font-size: 40px;
 }
+/*---------------Welcome Panel Styles end-----------------*/

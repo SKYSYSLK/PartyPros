@@ -78,6 +78,16 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 						}
 					}
 				?>
+				<tr>
+					<td>Client 01</td>
+					<td></td>
+					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
+				</tr>
 			</table>
 		</div>
 
@@ -105,6 +115,16 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 						}
 					}
 				?>
+				<tr>
+					<td>Client 01</td>
+					<td></td>
+					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
+				</tr>
 			</table>
 		</div>
 
@@ -122,7 +142,11 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -141,7 +165,11 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -160,7 +188,11 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 			</table>
 		</div>
