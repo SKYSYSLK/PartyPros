@@ -39,7 +39,11 @@
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 				<!------------------->
 			</table>
@@ -59,7 +63,11 @@
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 				<!------------------->
 			</table>
@@ -79,7 +87,11 @@
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 				<!------------------->
 			</table>
@@ -99,7 +111,11 @@
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 				<!------------------->
 			</table>
@@ -119,7 +135,11 @@
 					<td>Client 01</td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td>
+						<button>ADD</button>
+						<button>EDIT</button>
+						<button>DELETE</button>
+					</td>
 				</tr>
 				<!------------------->
 			</table>
