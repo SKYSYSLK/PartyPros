@@ -1,3 +1,4 @@
+/* function for table selection */
 function showTable(tn) {
 
 	var tableClients = document.getElementById("client_table");
@@ -49,4 +50,15 @@ function showTable(tn) {
 		panelWelcome.style.display = "none";
 	} 
 
+}
+
+/* function for add clients model */
+function showAddClient() {
+	var model = document.getElementById("addclient");
+	model.style.display = "block";
+}
+
+function closeAddClient() {
+	var model = document.getElementById("addclient");
+	model.style.display = "none";
 }
