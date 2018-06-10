@@ -4,7 +4,6 @@
 	<title>Admin Panel</title>
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<link rel="stylesheet" type="text/css" href="./css/adminpanel.css">
-	<script src="./javaScript/adminpanel.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -40,7 +39,7 @@
 					<td></td>
 					<td></td>
 					<td>
-						<button>ADD</button>
+						<button onclick="showAddClient()">ADD</button>
 						<button>EDIT</button>
 						<button>DELETE</button>
 					</td>
@@ -148,5 +147,20 @@
 	</div>
 
 </div>
+
+<!-- Client adding model box -->
+<div id="addclient" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Add a New Client </div>
+		<div class="modal-body">content</div>
+		<div class="modal-footer">
+			<button onclick="closeAddClient()">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- JavaScript linking -->
+<script src="./javaScript/adminpanel.js" type="text/javascript"></script>
 </body>
 </html>

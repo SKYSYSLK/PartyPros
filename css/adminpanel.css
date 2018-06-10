@@ -103,4 +103,80 @@ td button:hover {
 	line-height: 400px;
 	font-size: 40px;
 }
-/*---------------Welcome Panel Styles end-----------------*/
+/*---------------Welcome Panel Styles end-------------------*/
+
+/*---------------Model Box Styles start-----------------*/
+
+/* Model background */
+.model {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: lightgray;
+    margin: 0px auto;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* Modal header */
+.modal-header {
+	display: block;
+	margin: 10px;
+    text-align: center;
+    min-height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    background-color: rgba(100,100,100,0.3);
+    border-radius: 5px;
+}
+
+/* Modal body */
+.modal-body {
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	min-height: 200px;
+	background-color: rgba(100,100,100,0.3);
+	border-radius: 5px;
+}
+
+/* Modal footer */
+.modal-footer {
+	display: block;
+	margin: 10px;
+	text-align: center;
+	min-height: 50px;
+	background-color: rgba(100,100,100,0.3);
+    border-radius: 5px;
+}
+
+/* Modal button */
+.modal-footer button {
+	margin: 10px;
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(50,50,50,0.5);
+	color: white;
+}
+
+.modal-footer button:hover {
+	background-color: rgba(50,50,50,0.3);
+}
+/*---------------Model Box Styles end-------------------*/
