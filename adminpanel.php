@@ -1,3 +1,32 @@
+<?php
+
+require_once('inc/config.php');
+
+// Get all Clients
+$clientquery="SELECT * FROM clients";
+$clientcon=mysqli_query($connection,$clientquery);
+
+// Get all customers
+$cusotmerquery="SELECT * FROM customers";
+$customercon=mysqli_query($connection, $cusotmerquery);
+
+// Get all Services
+$servicequery="SELECT * FROM services";
+$servicecon=mysqli_query($connection, $servicequery);
+$services=mysqli_fetch_array($servicecon, MYSQLI_ASSOC);
+
+// Get all Orders
+$orderquery="SELECT * FROM invoices";
+$ordercon=mysqli_query($connection, $orderquery);
+$orders=mysqli_fetch_array($ordercon, MYSQLI_ASSOC);
+
+// Get all Admin users
+$adminquery="SELECT * FROM users WHERE type=0";
+$admincon=mysqli_query($connection, $adminquery);
+$admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,13 +64,20 @@
 					<th>Action</th>
 				</tr>
 				<!--Get table data from the DB-->
-				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<!------------------->
+				<?php
+					$row="";
+					if(mysqli_num_rows($clientcon)>0){
+						while($client=mysqli_fetch_assoc($clientcon)){
+							$row=$row."<tr>
+								<td>".$client['clientName']."</td>
+								<td>".$client['clientEmail']."</td>
+								<td>".$client['clientContact']."</td>
+								<td></td>
+							</tr>";
+							echo $row;
+						}
+					}
+				?>
 			</table>
 		</div>
 
@@ -55,13 +91,20 @@
 					<th>Action</th>
 				</tr>
 				<!--Get table data from the DB-->
-				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<!------------------->
+				<?php
+					$row="";
+					if(mysqli_num_rows($customercon)>0){
+						while($customer=mysqli_fetch_assoc($customercon)){
+							$row=$row."<tr>
+								<td>".$customer['customerName']."</td>
+								<td>".$customer['customerEmail']."</td>
+								<td>".$customer['customerContact']."</td>
+								<td></td>
+							</tr>";
+							echo $row;
+						}
+					}
+				?>
 			</table>
 		</div>
 
@@ -81,7 +124,6 @@
 					<td></td>
 					<td></td>
 				</tr>
-				<!------------------->
 			</table>
 		</div>
 
@@ -101,7 +143,6 @@
 					<td></td>
 					<td></td>
 				</tr>
-				<!------------------->
 			</table>
 		</div>
 
@@ -121,7 +162,6 @@
 					<td></td>
 					<td></td>
 				</tr>
-				<!------------------->
 			</table>
 		</div>
 
