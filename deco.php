@@ -8,17 +8,17 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 }
 
 // -----------------SELECT Quaries--------------------------------//
-// Get Deco Services
-$decoservicequery="SELECT * FROM services WHERE serviceType='floral-deco' LIMIT 3";
-$decoservicecon=mysqli_query($connection, $decoservicequery);
+// Get Floral Deco Items
+$fdecoitemquery="SELECT * FROM items WHERE itemType='floral-deco' LIMIT 3";
+$fdecoitemcon=mysqli_query($connection, $fdecoitemquery);
 
-// Get Stage Services
-$stageservicequery="SELECT * FROM services WHERE serviceType='stage-setup' LIMIT 3";
-$stageservicecon=mysqli_query($connection, $stageservicequery);
+// Get Stage Items
+$stageitemquery="SELECT * FROM items WHERE itemType='stage-setup' LIMIT 3";
+$stageitemcon=mysqli_query($connection, $stageitemquery);
 
-// Get Tent Services
-$tentservicequery="SELECT * FROM services WHERE serviceType='tent' LIMIT 3";
-$tentservicecon=mysqli_query($connection, $tentservicequery);
+// Get Tent Items
+$tentitemquery="SELECT * FROM items WHERE itemType='tent' LIMIT 3";
+$tentitemcon=mysqli_query($connection, $tentitemquery);
 
 ?>
 
@@ -65,9 +65,9 @@ $tentservicecon=mysqli_query($connection, $tentservicequery);
 
 			<?php
 				$block="";
-				if(mysqli_num_rows($decoservicecon)>0){
-					while($service=mysqli_fetch_assoc($decoservicecon)){
-						$block=$block."<div class='block'>$service[serviceDescription]</div>";
+				if(mysqli_num_rows($fdecoitemcon)>0){
+					while($item=mysqli_fetch_assoc($fdecoitemcon)){
+						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
 					}
 					echo $block;
 				}
@@ -82,9 +82,9 @@ $tentservicecon=mysqli_query($connection, $tentservicequery);
 
 			<?php
 				$block="";
-				if(mysqli_num_rows($stageservicecon)>0){
-					while($service=mysqli_fetch_assoc($stageservicecon)){
-						$block=$block."<div class='block'>$service[serviceDescription]</div>";
+				if(mysqli_num_rows($stageitemcon)>0){
+					while($item=mysqli_fetch_assoc($stageitemcon)){
+						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
 					}
 					echo $block;
 				}
@@ -96,11 +96,12 @@ $tentservicecon=mysqli_query($connection, $tentservicequery);
 	<div class="frame" style="background-color:rgba(255,103,0,0.4)">
 		<div class="frame-header">Tents</div>
 		<div class="frame-content">
+
 			<?php
 				$block="";
-				if(mysqli_num_rows($tentservicecon)>0){
-					while($service=mysqli_fetch_assoc($tentservicecon)){
-						$block=$block."<div class='block'>$service[serviceDescription]</div>";
+				if(mysqli_num_rows($tentitemcon)>0){
+					while($item=mysqli_fetch_assoc($tentitemcon)){
+						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
 					}
 					echo $block;
 				}
