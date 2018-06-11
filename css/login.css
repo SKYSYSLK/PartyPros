@@ -72,20 +72,22 @@ input[type=submit]:hover{
     display: block;
     margin: auto;
     box-sizing: border-box;
-    align-items: center;
     width: 100%;
     
 }
 #signup{
     display: block;
     margin: auto;
-    width: 300px;
+    text-align: center;
+    width: 400px;
     font-size: 1.5vw;
     box-sizing: border-box;
     padding: 10px;
 }
+
 a{
     text-decoration: none;
+    color: green;
 }
 
 

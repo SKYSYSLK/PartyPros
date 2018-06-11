@@ -52,11 +52,10 @@ elseif(isset($_POST['login'])){
     <div class="login">
         
         <form action="login.php" autocomplete="on" method="POST"><!--autocomplete completes the input values based on values that the user has entered before -->
-            <br><br><br><br><lable id="formname">EXTARVAGANCE</lable>
+            <br><br><br><br><lable id="formname" style="color: green">EXTARVAGANCE</lable>
             <input type="text" name="userName" placeholder="Enter your name" required><br>
             <input type="password" name="password" placeholder="Enter your password" required><br>
-            <lable id="forgot"><a href="#">forgot password?</a></lable>
-            <input type="submit" value="Log In" name="login"><br>
+            <input style="margin-left: 150px;margin-top: 50px;" type="submit" value="Log In" name="login"><br>
         </form>
         
     </div>
