@@ -1,10 +1,24 @@
 <?php
 
 session_start();
+require_once('inc/config.php');
 
 if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 	header("location: login.php");
 }
+
+// -----------------SELECT Quaries--------------------------------//
+// Get DJ items
+$djitemquery="SELECT * FROM items WHERE itemType='dj' LIMIT 3";
+$djitemcon=mysqli_query($connection, $djitemquery);
+
+// Get Stage Services
+$stageservicequery="SELECT * FROM services WHERE serviceType='stage-setup' LIMIT 3";
+$stageservicecon=mysqli_query($connection, $stageservicequery);
+
+// Get Tent Services
+$tentservicequery="SELECT * FROM services WHERE serviceType='tent' LIMIT 3";
+$tentservicecon=mysqli_query($connection, $tentservicequery);
 
 ?>
 
@@ -13,7 +27,7 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 <head>
 	<title>Entertainments And Catering</title>
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
-	<link rel="stylesheet" type="text/css" href="./css/entandcateringPage.css">
+	<link rel="stylesheet" type="text/css" href="./css/decorationsPage.css">
 </head>
 
 <body>
@@ -47,9 +61,15 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 	<div class="frame" style="background-color:rgba(255,103,0,0.4);">
 		<div class="frame-header">DJ</div>
 		<div class="frame-content">
-			<div class="block">DJ 1</div>
-			<div class="block">DJ 2</div>
-			<div class="block">DJ 3</div>
+			<?php
+				$block="";
+				if(mysqli_num_rows($djitemcon)>0){
+					while($item=mysqli_fetch_assoc($djitemcon)){
+						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
+					}
+					echo $block;
+				}
+			?>
 		</div>
 		<br>
 	</div>
