@@ -55,24 +55,15 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		<div id="client_table" style="display: none;">
 			<div class="table-title">Clients Managing</div>
 			<table>
+				<tr><button id="btnAddClient" class="btnAddition">ADD A NEW CLIENT</button></tr>
 				<tr>
 					<th>Name</th>
 					<th>Email</th>
 					<th>Contact</th>
 					<th>Action</th>
 				</tr>
+
 				<!--Get table data from the DB-->
-				<tr>
-					<td>Client 01</td>
-					<td></td>
-					<td></td>
-					<td>
-						<button onclick="showAddClient()">ADD</button>
-						<button>EDIT</button>
-						<button>DELETE</button>
-					</td>
-				</tr>
-				<!------------------->
 				<?php
 					$row="";
 					if(mysqli_num_rows($clientcon)>0){
@@ -82,7 +73,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 								<td>$client[clientEmail]</td>
 								<td>$client[clientContact]</td>
 								<td>
-									<button>EDIT</button>
+									<button id='btnEditClient'>EDIT</button>
 									<button>DELETE</button>
 								</td>
 							</tr>";
@@ -96,6 +87,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		<div id="customer_table" style="display: none;">
 			<div class="table-title">Customers Managing</div>
 			<table>
+				<tr><button id="btnAddCustomer" class="btnAddition">ADD A NEW CUSTOMER</button></tr>
 				<tr>
 					<th>Name</th>
 					<th>Email</th>
@@ -112,7 +104,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 								<td>$customer[customerEmail]</td>
 								<td>$customer[customerContact].</td>
 								<td>
-									<button>EDIT</button>
+									<button id='btnEditCustomer'>EDIT</button>
 									<button>DELETE</button>
 								</td>
 							</tr>";
@@ -126,6 +118,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		<div id="service_table" style="display: none;">
 			<div class="table-title">Services Managing</div>
 			<table>
+				<tr><button id="btnAddService" class="btnAddition">ADD A NEW SERVICE</button></tr>
 				<tr>
 					<th>ID</th>
 					<th>Type</th>
@@ -142,7 +135,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 								<td>$service[serviceType]</td>
 								<td>$service[serviceDescription]</td>
 								<td>
-									<button>EDIT</button>
+									<button id='btnEditService'>EDIT</button>
 									<button>DELETE</button>
 								</td>
 							</tr>";
@@ -211,22 +204,108 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 				?>
 			</table>
 		</div>
-
 	</div>
-
 </div>
+
+<!--------- Model Box start ------------->
 
 <!-- Client adding model box -->
 <div id="addclient" class="model">
 	<div class="modal-content">
 		<div class="modal-header"> Add a New Client </div>
-		<div class="modal-body">content</div>
+		<div class="modal-body">
+			<div class="modal-property">Client Name<input type="text" name="txtName"></div>
+			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
+			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
+		</div>
 		<div class="modal-footer">
-			<button onclick="closeAddClient()">Cancel</button>
+			<button id="btnCancelAddClient">Cancel</button>
 			<button>Submit</button>
 		</div>
 	</div>
 </div>
+
+<!-- Client editing model box -->
+<div id="editclient" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Edit the Client </div>
+		<div class="modal-body">
+			<div class="modal-property">Client Name<input type="text" name="txtName"></div>
+			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
+			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelEditClient">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- Customer adding model box -->
+<div id="addcustomer" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Add a New Customer </div>
+		<div class="modal-body">
+			<div class="modal-property">Customer Name<input type="text" name="txtName"></div>
+			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
+			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelAddCustomer">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- Customer editing model box -->
+<div id="editcustomer" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Edit the Customer </div>
+		<div class="modal-body">
+			<div class="modal-property">Customer Name<input type="text" name="txtName"></div>
+			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
+			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelEditCustomer">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- Service adding model box -->
+<div id="addservice" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Add a New Service </div>
+		<div class="modal-body">
+			<div class="modal-property">Service ID<input type="text" name="txtName"></div>
+			<div class="modal-property">Type<input type="text" name="txtName"></div>
+			<div class="modal-property">Description<input type="text" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelAddService">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- Service editing model box -->
+<div id="editservice" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Edit the Service </div>
+		<div class="modal-body">
+			<div class="modal-property">Service ID<input type="text" name="txtName"></div>
+			<div class="modal-property">Type<input type="text" name="txtName"></div>
+			<div class="modal-property">Description<input type="text" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelEditService">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!--------- Model Box end ------------->
 
 <!-- JavaScript linking -->
 <script src="./javaScript/adminpanel.js" type="text/javascript"></script>
