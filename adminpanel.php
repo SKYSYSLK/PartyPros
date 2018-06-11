@@ -28,23 +28,74 @@ $ordercon=mysqli_query($connection, $orderquery);
 // Get all Admin users
 $adminquery="SELECT * FROM users WHERE type=0";
 $admincon=mysqli_query($connection, $adminquery);
-$admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 
 //-----------------------CLIENT Quaries--------------------------//
 if(isset($_POST['clientsubmit'])){
-	
+	$name=$_POST['clientname'];
+	$email=$_POST['clientemail'];
+	$contact=$_POST['clientcontact'];
+	$username=$_POST['clientusername'];
+	$password=$_POST['clientpassword'];
+	$password=md5($password);
+
+	$clientquery="INSERT INTO clients (clientName, clientEmail, clientContact) VALUES ('$name','$email','$contact')";
+	$clientins=mysqli_query($connection, $clientquery);
+	$user_id=mysqli_insert_id($connection);
+	$userquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password','1','$user_id')";
+	$insuser=mysqli_query($connection,$userquery);
+	header("location: adminpanel.php");
 }
 
 //-----------------------CUSTOMER Quaries-----------------------//
+elseif(isset($_POST['customerSubmit'])){
+	$name=$_POST['customername'];
+	$email=$_POST['customeremail'];
+	$contact=$_POST['customercontact'];
+	$username=$_POST['customerusername'];
+	$password=$_POST['customerpassword'];
 
+	$query="INSERT INTO customers (customerName, customerEmail, customerContact) VALUES ('$name','$email','$contact')";
+	$insquery=mysqli_query($connection,$query);
+
+	$user_id=mysqli_insert_id($connection);
+	$userquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password','2','$user_id')";
+	$insuser=mysqli_query($connection,$userquery);
+	header("location: adminpanel.php");
+}
 
 //--------------------SERVICES Quaries--------------------------//
-
+elseif(isset($_POST['serviceSubmit'])){
+	$id=$_POST['serviceid'];
+	$type=$_POST['servicetype'];
+	$desc=$_POST['serviceDesc'];
+	$servicequery="INSERT INTO services (serviceID, serviceType, serviceDescription) VALUES('$id','$type','$desc')";
+	$insquery=mysqli_query($connection, $servicequery);
+	header("location: adminpanel.php");
+}
 
 //-----------------------ORDER Quaries--------------------------//
+elseif(isset($_POST['submitorder'])){
+	$invoice=$_POST['invoiceid'];
+	$item=$_POST['itemid'];
+	$customerid=$_POST['customerid'];
+	$itemcount=$_POST['itemcount'];
+
+	$orderquery="INSERT INTO invoices (invoiceId, itemID, customerID, itemCount) VALUES ('$invoice','$item','$customerid','$itemcount')";
+	$insquery=mysqli_query($connection, $orderquery);
+	header("location: adminpanel.php");
+}
+
 
 //-----------------------ADMIN Quaries--------------------------//
+elseif(isset($_POST['submitAdmin'])){
+	$username=$_POST['username'];
+	$password=$_POST['password'];
 
+	$adminquery="INSERT INTO users (username, password, type, user_id) VALUES ('$username','$password',0,0)";
+	$insadmin=mysqli_query($connection,$adminquery);
+}
+
+//-------------------------------------------------------------//
 ?>
 
 
@@ -96,8 +147,8 @@ if(isset($_POST['clientsubmit'])){
 								<td>$client[clientEmail]</td>
 								<td>$client[clientContact]</td>
 								<td>
-									<button id='btnEditClient'>EDIT</button>
-									<button>DELETE</button>
+									<button onclick='editclient($client[clientID])'>EDIT</a>
+									<a href='queryboxes/delete.php?client=$client[clientID]'><button>DELETE</button></a>
 								</td>
 							</tr>";
 						}
@@ -127,8 +178,8 @@ if(isset($_POST['clientsubmit'])){
 								<td>$customer[customerEmail]</td>
 								<td>$customer[customerContact].</td>
 								<td>
-									<button id='btnEditCustomer'>EDIT</button>
-									<button>DELETE</button>
+									<button onclick='editcustomer($customer[customerID])'>EDIT</button>
+									<a href='queryboxes/delete.php?customer=$customer[customerID]'><button>DELETE</button></a>
 								</td>
 							</tr>";
 						}
@@ -158,8 +209,8 @@ if(isset($_POST['clientsubmit'])){
 								<td>$service[serviceType]</td>
 								<td>$service[serviceDescription]</td>
 								<td>
-									<button id='btnEditService'>EDIT</button>
-									<button>DELETE</button>
+									<button onclick='editservice($service[serviceID])'>EDIT</button>
+									<a href='queryboxes/delete.php?service=$service[serviceID]'><button>DELETE</button></a>
 								</td>
 							</tr>";
 						}
@@ -192,8 +243,8 @@ if(isset($_POST['clientsubmit'])){
 								<td>".$order['customerID']."</td>
 								<td>".$order['itemCount']."</td>
 								<td>
-									<button id='btnEditOrder'>EDIT</button>
-									<button>DELETE</button>
+									<button onclick='editinvoice($order[invoiceId])'>EDIT</button>
+									<a href='queryboxes/delete.php?order=$order[invoiceId]'><button>DELETE</button></a>
 								</td>
 							</tr>";
 						}
@@ -216,11 +267,12 @@ if(isset($_POST['clientsubmit'])){
 					$row="";
 					if(mysqli_num_rows($admincon)>0){
 						while($admin=mysqli_fetch_assoc($admincon)){
+							$_SESSION['adminuser']=$admin['username'];
 							$row=$row."<tr>
 								<td>$admin[username]</td>
 								<td>
-									<button id='btnEditAdmin'>EDIT</button>
-									<button>DELETE</button>
+									<button onclick='editadmin()'>EDIT</button>
+									<a href='queryboxes/delete.php?admin=$admin[username]'><button>DELETE</button></a>
 								</td>
 							</tr>";
 							echo $row;
@@ -243,6 +295,8 @@ if(isset($_POST['clientsubmit'])){
 				<div class="modal-property">Client Name<input type="text" name="clientname"></div>
 				<div class="modal-property">Email Address<input type="text" name="clientemail"></div>
 				<div class="modal-property">Contact Number<input type="text" name="clientcontact"></div>
+				<div class="modal-property">Username<input type="text" name="clientusername"></div>
+				<div class="modal-property">Password<input type="text" name="clientpassword"></div>
 			</div>
 			<div class="modal-footer">
 				<button id="btnCancelAddClient">Cancel</button>
@@ -252,19 +306,21 @@ if(isset($_POST['clientsubmit'])){
 	</div>
 </div>
 
-<!-- Client editing model box -->
+<!-- Customer editing model box -->
 <div id="editclient" class="model">
 	<div class="modal-content">
-		<div class="modal-header"> Edit the Client </div>
-		<div class="modal-body">
-			<div class="modal-property">Client Name<input type="text" name="txtName"></div>
-			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
-			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
-		</div>
-		<div class="modal-footer">
-			<button id="btnCancelEditClient">Cancel</button>
-			<button>Submit</button>
-		</div>
+		<form method="POST" action="adminpanel.php">
+			<div class="modal-header"> Edit the Client </div>
+			<div class="modal-body">
+				<div class="modal-property">Client Name<input type="text" name="clientname"></div>
+				<div class="modal-property">Email Address<input type="text" name="clientemail"></div>
+				<div class="modal-property">Contact Number<input type="text" name="clientcontact"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancelEditClient">Cancel</button>
+				<button type="submit" name="clientedit">Submit</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -272,15 +328,19 @@ if(isset($_POST['clientsubmit'])){
 <div id="addcustomer" class="model">
 	<div class="modal-content">
 		<div class="modal-header"> Add a New Customer </div>
-		<div class="modal-body">
-			<div class="modal-property">Customer Name<input type="text" name="txtName"></div>
-			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
-			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
-		</div>
-		<div class="modal-footer">
-			<button id="btnCancelAddCustomer">Cancel</button>
-			<button>Submit</button>
-		</div>
+		<form method="POST" action="adminpanel.php">
+			<div class="modal-body">
+				<div class="modal-property">Customer Name<input type="text" name="customername"></div>
+				<div class="modal-property">Email Address<input type="text" name="customeremail"></div>
+				<div class="modal-property">Contact Number<input type="text" name="customercontact"></div>
+				<div class="modal-property">username<input type="text" name="customerusername"></div>
+				<div class="modal-property">password<input type="text" name="customerpassword"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancelAddCustomer">Cancel</button>
+				<button type="submit" name="customerSubmit">Save</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -289,9 +349,9 @@ if(isset($_POST['clientsubmit'])){
 	<div class="modal-content">
 		<div class="modal-header"> Edit the Customer </div>
 		<div class="modal-body">
-			<div class="modal-property">Customer Name<input type="text" name="txtName"></div>
-			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
-			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
+			<div class="modal-property">Customer Name<input type="text" name="customername"></div>
+			<div class="modal-property">Email Address<input type="text" name="customeremail"></div>
+			<div class="modal-property">Contact Number<input type="text" name="customeremail"></div>
 		</div>
 		<div class="modal-footer">
 			<button id="btnCancelEditCustomer">Cancel</button>
@@ -303,16 +363,18 @@ if(isset($_POST['clientsubmit'])){
 <!-- Service adding model box -->
 <div id="addservice" class="model">
 	<div class="modal-content">
-		<div class="modal-header"> Add a New Service </div>
-		<div class="modal-body">
-			<div class="modal-property">Service ID<input type="text" name="txtName"></div>
-			<div class="modal-property">Type<input type="text" name="txtName"></div>
-			<div class="modal-property">Description<input type="text" name="txtName"></div>
-		</div>
-		<div class="modal-footer">
-			<button id="btnCancelAddService">Cancel</button>
-			<button>Submit</button>
-		</div>
+		<form method="POST" action="adminpanel.php">
+			<div class="modal-header"> Add a New Service </div>
+			<div class="modal-body">
+				<div class="modal-property">Service ID<input type="text" name="serviceid"></div>
+				<div class="modal-property">Type<input type="text" name="servicetype"></div>
+				<div class="modal-property">Description<input type="text" name="serviceDesc"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancelAddService">Cancel</button>
+				<button type="submit" name="serviceSubmit">Save</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -338,15 +400,18 @@ if(isset($_POST['clientsubmit'])){
 <div id="addorder" class="model">
 	<div class="modal-content">
 		<div class="modal-header"> Add a New Order </div>
-		<div class="modal-body">
-			<div class="modal-property">Service ID<input type="text" name="txtName"></div>
-			<div class="modal-property">Type<input type="text" name="txtName"></div>
-			<div class="modal-property">Description<input type="text" name="txtName"></div>
-		</div>
-		<div class="modal-footer">
-			<button id="btnCancelAddService">Cancel</button>
-			<button>Submit</button>
-		</div>
+		<form method="POST" action="adminpanel.php">
+			<div class="modal-body">
+				<div class="modal-property">Invoice ID<input type="text" name="invoiceid"></div>
+				<div class="modal-property">Item ID<input type="text" name="itemid"></div>
+				<div class="modal-property">Customer ID<input type="text" name="customerid"></div>
+				<div class="modal-property">Item Count<input type="text" name="itemcount"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancelAddService">Cancel</button>
+				<button type="submit" name="submitorder">Submit</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -371,14 +436,16 @@ if(isset($_POST['clientsubmit'])){
 <div id="addadmin" class="model">
 	<div class="modal-content">
 		<div class="modal-header"> Add a New Admin </div>
-		<div class="modal-body">
-			<div class="modal-property">Admin Name<input type="text" name="txtName"></div>
-			<div class="modal-property">Password<input type="password" name="txtName"></div>
-		</div>
-		<div class="modal-footer">
-			<button id="btnCancelAddAdmin">Cancel</button>
-			<button>Submit</button>
-		</div>
+		<form method="POST" action="adminpanel.php">
+			<div class="modal-body">
+				<div class="modal-property">username<input type="text" name="username"></div>
+				<div class="modal-property">Password<input type="password" name="password"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancelAddAdmin">Cancel</button>
+				<button type="submit" name="submitAdmin">Submit</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -401,5 +468,29 @@ if(isset($_POST['clientsubmit'])){
 
 <!-- JavaScript linking -->
 <script src="./javaScript/adminpanel.js" type="text/javascript"></script>
+
+<script>
+function editclient(id) {
+	var url="queryboxes/client.php?client="+id;
+    var myWindow = window.open(url, "", "width=700,height=400");
+}
+function editcustomer(id) {
+	var url="queryboxes/customer.php?customer="+id;
+    var myWindow = window.open(url, "", "width=700,height=400");
+}
+function editservice(id) {
+	var url="queryboxes/services.php?service="+id;
+    var myWindow = window.open(url, "", "width=700,height=400");
+}
+function editinvoice(id) {
+	var url="queryboxes/orders.php?invoice="+id;
+    var myWindow = window.open(url, "", "width=700,height=400");
+}
+function editadmin() {
+	var url="queryboxes/admin.php?admin=";
+    var myWindow = window.open(url, "", "width=700,height=400");
+}
+</script>
+
 </body>
 </html>
