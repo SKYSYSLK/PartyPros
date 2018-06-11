@@ -149,6 +149,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		<div id="order_table" style="display: none;">
 			<div class="table-title">Orders Managing</div>
 			<table>
+				<tr><button id="btnAddOrder" class="btnAddition">ADD A NEW ORDER</button></tr>
 				<tr>
 					<th>Item</th>
 					<th>Customer</th>
@@ -168,7 +169,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 								<td>".$order['customerID']."</td>
 								<td>".$order['itemCount']."</td>
 								<td>
-									<button>EDIT</button>
+									<button id='btnEditOrder'>EDIT</button>
 									<button>DELETE</button>
 								</td>
 							</tr>";
@@ -182,6 +183,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		<div id="admin_table" style="display: none;">
 			<div class="table-title">Admins Managing</div>
 			<table>
+				<tr><button id="btnAddAdmin" class="btnAddition">ADD A NEW ADMIN</button></tr>
 				<tr>
 					<th>Name</th>
 					<th>Action</th>
@@ -194,7 +196,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 							$row=$row."<tr>
 								<td>$admin[username]</td>
 								<td>
-									<button>EDIT</button>
+									<button id='btnEditAdmin'>EDIT</button>
 									<button>DELETE</button>
 								</td>
 							</tr>";
@@ -300,6 +302,71 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 		</div>
 		<div class="modal-footer">
 			<button id="btnCancelEditService">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- Some issue -->
+
+<!-- Order adding model box -->
+<div id="addorder" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Add a New Order </div>
+		<div class="modal-body">
+			<div class="modal-property">Service ID<input type="text" name="txtName"></div>
+			<div class="modal-property">Type<input type="text" name="txtName"></div>
+			<div class="modal-property">Description<input type="text" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelAddService">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- Order editing model box -->
+<div id="editservice" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Edit the Service </div>
+		<div class="modal-body">
+			<div class="modal-property">Service ID<input type="text" name="txtName"></div>
+			<div class="modal-property">Type<input type="text" name="txtName"></div>
+			<div class="modal-property">Description<input type="text" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelEditService">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+<!-- Some issue -->
+
+<!-- Admin adding model box -->
+<div id="addadmin" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Add a New Admin </div>
+		<div class="modal-body">
+			<div class="modal-property">Admin Name<input type="text" name="txtName"></div>
+			<div class="modal-property">Password<input type="password" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelAddAdmin">Cancel</button>
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<!-- Admin editing model box -->
+<div id="editadmin" class="model">
+	<div class="modal-content">
+		<div class="modal-header"> Edit the Admin </div>
+		<div class="modal-body">
+			<div class="modal-property">Admin Name<input type="text" name="txtName"></div>
+			<div class="modal-property">Password<input type="password" name="txtName"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCancelEditAdmin">Cancel</button>
 			<button>Submit</button>
 		</div>
 	</div>
