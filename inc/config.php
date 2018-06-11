@@ -3,7 +3,7 @@
 $host="localhost";
 $username="root";
 $password="";
-$db="partypro";
+$db="unisys";
 
 $connection=mysqli_connect($host,$username,$password,$db);
 
