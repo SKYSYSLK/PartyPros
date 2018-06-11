@@ -32,7 +32,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 
 //-----------------------CLIENT Quaries--------------------------//
 if(isset($_POST['clientsubmit'])){
-	$
+	
 }
 
 //-----------------------CUSTOMER Quaries-----------------------//
