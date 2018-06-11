@@ -1,7 +1,13 @@
 <?php
 
+session_start();
 require_once('inc/config.php');
 
+if(!isset($_SESSION['usertype'])&&($_SESSION['usertype']==2)){
+	header("location: index.php");
+}
+
+// -----------------SELECT Quaries--------------------------------//
 // Get all Clients
 $clientquery="SELECT * FROM clients";
 $clientcon=mysqli_query($connection,$clientquery);
@@ -24,7 +30,24 @@ $adminquery="SELECT * FROM users WHERE type=0";
 $admincon=mysqli_query($connection, $adminquery);
 $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 
+//-----------------------CLIENT Quaries--------------------------//
+if(isset($_POST['clientsubmit'])){
+	$
+}
+
+//-----------------------CUSTOMER Quaries-----------------------//
+
+
+//--------------------SERVICES Quaries--------------------------//
+
+
+//-----------------------ORDER Quaries--------------------------//
+
+//-----------------------ADMIN Quaries--------------------------//
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -209,21 +232,23 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 	</div>
 </div>
 
-<!--------- Model Box start ------------->
+<!-- Model Box start -->
 
 <!-- Client adding model box -->
 <div id="addclient" class="model">
 	<div class="modal-content">
-		<div class="modal-header"> Add a New Client </div>
-		<div class="modal-body">
-			<div class="modal-property">Client Name<input type="text" name="txtName"></div>
-			<div class="modal-property">Email Address<input type="text" name="txtName"></div>
-			<div class="modal-property">Contact Number<input type="text" name="txtName"></div>
-		</div>
-		<div class="modal-footer">
-			<button id="btnCancelAddClient">Cancel</button>
-			<button>Submit</button>
-		</div>
+		<form method="POST" action="adminpanel.php">
+			<div class="modal-header"> Add a New Client </div>
+			<div class="modal-body">
+				<div class="modal-property">Client Name<input type="text" name="clientname"></div>
+				<div class="modal-property">Email Address<input type="text" name="clientemail"></div>
+				<div class="modal-property">Contact Number<input type="text" name="clientcontact"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancelAddClient">Cancel</button>
+				<button type="submit" name="clientsubmit">Save</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -372,7 +397,7 @@ $admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 	</div>
 </div>
 
-<!--------- Model Box end ------------->
+<!-- Model Box end -->
 
 <!-- JavaScript linking -->
 <script src="./javaScript/adminpanel.js" type="text/javascript"></script>
