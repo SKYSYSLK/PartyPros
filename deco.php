@@ -29,6 +29,7 @@ $tentitemcon=mysqli_query($connection, $tentitemquery);
 	<title>Decorations</title>
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<link rel="stylesheet" type="text/css" href="./css/decorationsPage.css">
+	<script type="text/javascript" src="./javascript/jquery.min.js"></script>
 </head>
 
 <body>
@@ -67,7 +68,9 @@ $tentitemcon=mysqli_query($connection, $tentitemquery);
 				$block="";
 				if(mysqli_num_rows($fdecoitemcon)>0){
 					while($item=mysqli_fetch_assoc($fdecoitemcon)){
-						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
+						$block=$block."<div class='block' type='submit'>$item[itemName]<br>RS. $item[itemPrice]".
+						"<br><br><button onclick='addToCart($item[itemID])'> ADD TO CART </button>".
+						"</div>";
 					}
 					echo $block;
 				}
@@ -119,6 +122,6 @@ $tentitemcon=mysqli_query($connection, $tentitemquery);
 	</div>
 
 </div>
-
+<script type="text/javascript" src="./javaScript/mycart.js"></script>
 </body>
 </html>
