@@ -50,3 +50,96 @@
     background-color: #3e8e41;
 }
 /*---------------Button Styles end------------*/
+
+#paymentimg{
+	width:600px;
+	height:180px;
+	margin-left: 280px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.form {
+    display: block;
+    padding: 20px;
+    margin: 5px;
+    margin-left: 260px;
+    min-height: 300px;
+    width: 50%;
+    background-color: rgba(255,255,0,0.6);
+    border: 1px solid darkorange;
+    border-radius: 10px;
+}
+
+#orderTitle{
+	font-size:30px;
+	margin-top:20px;
+	margin-left: 255px;
+	margin-right: 285px;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+	background: rgba(255,255,0,0.6);
+}
