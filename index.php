@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,12 +29,33 @@
 			</div>
 		</div>
 	<!-- Login and SignUp Buttons -->
-		<div class="right">
-			<div class="loginSignUp">
-			  <a href="./login.php"><button class="loginSignUpbtn"> Login</button></a>
-			  <a href="./register.php"><button class="loginSignUpbtn"> Register</button></a>
+	<?php
+	if(!isset($_SESSION["usertype"])){
+		echo "
+		<div class='right'>
+			<div class='loginSignUp'>
+			  <a href='./login.php'><button class='loginSignUpbtn'> Login</button></a>
+			  <a href='./register.php'><button class='loginSignUpbtn'> Register</button></a>
+			</div>
+		</div>";
+	}elseif($_SESSION["usertype"]!=2){
+		echo "
+		<div class='right'>
+			<div class='loginSignUp'>
+			  <a href='./adminpanel.php'><button class='loginSignUpbtn'> Adminpanel</button></a>
+			  <a href='./logout.php'><button class='loginSignUpbtn'> Logout</button></a>
+			</div>
+		</div>";
+	}else{
+		echo"
+		<div class='right'>
+			<div class='loginSignUp'>
+			  <a href='./logout.php'><button class='loginSignUpbtn'> Logout</button></a>
 			</div>
 		</div>
+		";
+	}
+	?>
 	<!--Site Title -->
 		<div class="siteTitle">
 			EXTRAVAGANCE
@@ -59,13 +85,13 @@
 
 	<div class="subTopicsFrame" style="background-color:rgba(255,103,0,0.4)">
 		<div class="subTopics">
-			<a href="./entertainment.php">Entertainments</a>
+			<a href="./entandcatering.php">Entertainments</a>
 		</div>
 	</div>
 
 	<div class="subTopicsFrame" style="background-color:rgba(255,255,0,0.4)">
 		<div class="subTopics">
-			<a href="./catering.php">Catering</a>
+			<a href="./entandcatering.php#catering_section">Catering</a>
 		</div>
 	</div>
 	<!--Footer-->

@@ -1,0 +1,217 @@
+.page {
+	background-color: rgba(0,100,100,0.4);
+	min-height: 500px;
+}
+
+/*-------------------Tab Panel Styles start--------------------*/
+.tab-panel {
+	margin: 30px;
+	margin-right: 0px;
+	min-width: 300px;
+}
+
+.tab-panel * {
+	border: 1px solid lightblue;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.tab-header {
+	min-height: 100px;
+	line-height: 100px;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: rgba(255,255,0,0.6);
+}
+
+.tab {
+	margin: 10px 0px;
+	min-height: 40px;
+	line-height: 40px;
+	font-size: 22px;
+	background-color: rgba(255,255,255,0.4);
+	cursor: pointer;
+}
+
+.tab:hover {
+	font-size: 24px;
+	background-color: rgba(255,255,255,0.8);
+}
+/*-------------------Tab Panel Styles end--------------------*/
+
+/*-------------------Table Styles start----------------------*/
+.table-panel {
+	margin: 35px;
+	margin-left: 0px;
+	max-width: 750px;
+	min-width: 750px;
+	min-height: 400px;
+	border: 1px solid lightblue;
+	border-radius: 10px;
+	background-color: rgba(0,255,255,0.2);
+}
+
+.table-title {
+	margin: 20px 12px;
+	text-align: center;
+	font-size: 28px;
+	background-color: rgba(255,255,100,0.6);
+}
+
+.btnAddition {
+	float: right;
+	margin: 10px 15px;
+	margin-top: 0px;
+	border: none;
+	width: 250px;
+	height: 35px;
+	font-weight: bold;
+}
+
+.btnAddition:hover {
+	background-color: blue;
+}
+
+table,th,td {
+	border-radius: 5px;
+}
+
+table {
+	margin: 0px auto;
+	width: 730px;
+	background: rgba(255,255,255,0.3);
+}
+
+th,td {
+	width: 180px;
+	height: 25px;
+}
+
+th {
+	background: rgba(255,255,255,0.5);
+}
+
+td {
+	background: rgba(0,0,0,0.2);
+	padding-left: 5px;
+	text-align: center;
+}
+
+td button {
+	width: 55px;
+	height: 20px;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+}
+
+td button:hover {
+	background-color: blue;
+}
+/*-------------------Table Styles end----------------------*/
+
+/*---------------Welcome Panel Styles start-----------------*/
+#welcome_panel {
+	text-align: center;
+	min-height: 400px;
+	line-height: 400px;
+	font-size: 40px;
+}
+/*---------------Welcome Panel Styles end-------------------*/
+
+/*---------------Model Box Styles start-----------------*/
+
+/* Model background */
+.model {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: lightgray;
+    margin: 0px auto;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* Modal header */
+.modal-header {
+	display: block;
+	margin: 10px;
+    text-align: center;
+    min-height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(100,100,100,0.3);
+    border-radius: 5px;
+}
+
+/* Modal body */
+.modal-body {
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	min-height: 200px;
+	background-color: rgba(100,100,100,0.3);
+	border-radius: 5px;
+}
+
+/* Modal footer */
+.modal-footer {
+	display: block;
+	margin: 10px;
+	text-align: center;
+	min-height: 50px;
+	background-color: rgba(100,100,100,0.3);
+    border-radius: 5px;
+}
+
+/* Modal button */
+.modal-footer button {
+	margin: 10px;
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(50,50,50,0.5);
+	color: white;
+}
+
+.modal-footer button:hover {
+	background-color: rgba(50,50,50,0.3);
+}
+
+.modal-property {
+	margin: 20px auto;
+	padding-left: 30px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 22px;
+}
+
+.modal-property input {
+	float: right;
+	margin: 0px;
+	padding-left: 10px;
+	width: 300px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 20px;
+}
+/*---------------Model Box Styles end-------------------*/
