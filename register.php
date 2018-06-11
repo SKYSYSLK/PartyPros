@@ -71,7 +71,7 @@ if(isset($_POST['client'])||isset($_POST['customer'])){
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<link rel="stylesheet" type="text/css" href="./css/registrationPage.css">
 	<link rel="stylesheet" type="text/css" href="./css/homePage.css">
-	<script src="./javaScript/register.js" type="text/javascript"></script>
+	<script src="./javaScript/hidepanels.js" type="text/javascript"></script>
 
 </head>
 
