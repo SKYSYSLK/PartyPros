@@ -1,3 +1,4 @@
+/* function for table selection */
 function showTable(tn) {
 
 	var tableClients = document.getElementById("client_table");
@@ -49,4 +50,108 @@ function showTable(tn) {
 		panelWelcome.style.display = "none";
 	} 
 
+}
+
+/* initialising */
+
+var mdlAddClient = document.getElementById("addclient");
+var mdlEditClient = document.getElementById("editclient");
+var mdlAddCustomer = document.getElementById("addcustomer");
+var mdlEditCustomer = document.getElementById("editcustomer");
+var mdlAddService = document.getElementById("addservice");
+var mdlEditService = document.getElementById("editservice");
+var mdlAddAdmin = document.getElementById("addadmin");
+var mdlEditAdmin = document.getElementById("editadmin");
+
+var btnAddClient = document.getElementById("btnAddClient");
+var btnEditClient = document.getElementById("btnEditClient");
+var btnAddCustomer = document.getElementById("btnAddCustomer");
+var btnEditCustomer = document.getElementById("btnEditCustomer");
+var btnAddService = document.getElementById("btnAddService");
+var btnEditService = document.getElementById("btnEditService");
+var btnAddAdmin = document.getElementById("btnAddAdmin");
+var btnEditAdmin = document.getElementById("btnEditAdmin");
+
+var btnCancelAddClient = document.getElementById("btnCancelAddClient");
+var btnCancelEditClient = document.getElementById("btnCancelEditClient");
+var btnCancelAddCustomer = document.getElementById("btnCancelAddCustomer");
+var btnCancelEditCustomer = document.getElementById("btnCancelEditCustomer");
+var btnCancelAddService = document.getElementById("btnCancelAddService");
+var btnCancelEditService = document.getElementById("btnCancelEditService");
+var btnCancelAddAdmin = document.getElementById("btnCancelAddAdmin");
+var btnCancelEditAdmin = document.getElementById("btnCancelEditAdmin");
+
+
+/* function for add clients model */
+
+btnAddClient.onclick = function() {
+	mdlAddClient.style.display = "block";
+}
+
+btnEditClient.onclick = function() {
+	mdlEditClient.style.display = "block";
+}
+
+btnCancelAddClient.onclick = function() {
+	mdlAddClient.style.display = "none";
+}
+
+btnCancelEditClient.onclick = function() {
+	mdlEditClient.style.display = "none";
+}
+
+
+/* function for add customer model */
+
+btnAddCustomer.onclick = function() {
+	mdlAddCustomer.style.display = "block";
+}
+
+btnEditCustomer.onclick = function() {
+	mdlEditCustomer.style.display = "block";
+}
+
+btnCancelAddCustomer.onclick = function() {
+	mdlAddCustomer.style.display = "none";
+}
+
+btnCancelEditCustomer.onclick = function() {
+	mdlEditCustomer.style.display = "none";
+}
+
+/* function for add service model */
+
+btnAddService.onclick = function() {
+	mdlAddService.style.display = "block";
+}
+
+btnEditService.onclick = function() {
+	mdlEditService.style.display = "block";
+}
+
+btnCancelAddService.onclick = function() {
+	mdlAddService.style.display = "none";
+}
+
+btnCancelEditService.onclick = function() {
+	mdlEditService.style.display = "none";
+}
+
+
+/* function for add service model */
+
+btnAddAdmin.onclick = function() {
+	mdlAddAdmin.style.display = "block";
+}
+
+btnEditAdmin.onclick = function() {
+	mdlEditAdmin.style.display = "block";
+}
+
+btnCancelAddAdmin.onclick = function() {
+	mdlAddAdmin.style.display = "none";
+}
+
+btnCancelEditAdmin.onclick = function() {
+	mdlEditAdmin.style.display = "none";
 }
