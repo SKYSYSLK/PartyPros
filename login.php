@@ -24,7 +24,7 @@ elseif(isset($_POST['login'])){
         $_SESSION['userid']=$userlogin["user_id"];
 
         if($userlogin["type"]==1){
-            echo "Client";
+            header("location: adminpanel.php");
         }
         else{
             header("location: index.php");

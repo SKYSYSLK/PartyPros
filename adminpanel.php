@@ -1,6 +1,11 @@
 <?php
 
+session_start();
 require_once('inc/config.php');
+
+if(!isset($_SESSION['usertype'])&&($_SESSION['usertype']==2)){
+	header("location: index.php");
+}
 
 // Get all Clients
 $clientquery="SELECT * FROM clients";
