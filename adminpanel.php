@@ -22,7 +22,7 @@ $ordercon=mysqli_query($connection, $orderquery);
 // Get all Admin users
 $adminquery="SELECT * FROM users WHERE type=0";
 $admincon=mysqli_query($connection, $adminquery);
-$admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
+//$admins=mysqli_fetch_array($admincon, MYSQLI_ASSOC);
 
 ?>
 
