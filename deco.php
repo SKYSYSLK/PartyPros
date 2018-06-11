@@ -12,6 +12,14 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 $decoservicequery="SELECT * FROM services WHERE serviceType='floral-deco' LIMIT 3";
 $decoservicecon=mysqli_query($connection, $decoservicequery);
 
+// Get Stage Services
+$stageservicequery="SELECT * FROM services WHERE serviceType='stage-setup' LIMIT 3";
+$stageservicecon=mysqli_query($connection, $stageservicequery);
+
+// Get Tent Services
+$tentservicequery="SELECT * FROM services WHERE serviceType='tent' LIMIT 3";
+$tentservicecon=mysqli_query($connection, $tentservicequery);
+
 ?>
 
 
@@ -59,7 +67,6 @@ $decoservicecon=mysqli_query($connection, $decoservicequery);
 				$block="";
 				if(mysqli_num_rows($decoservicecon)>0){
 					while($service=mysqli_fetch_assoc($decoservicecon)){
-						//var_dump($service);
 						$block=$block."<div class='block'>$service[serviceDescription]</div>";
 					}
 					echo $block;
@@ -72,9 +79,16 @@ $decoservicecon=mysqli_query($connection, $decoservicequery);
 	<div class="frame" style="background-color:rgba(255,255,0,0.4)">
 		<div class="frame-header">Stage Setup</div>
 		<div class="frame-content">
-			<div class="block">Company 1</div>
-			<div class="block">Company 2</div>
-			<div class="block">Company 3</div>
+
+			<?php
+				$block="";
+				if(mysqli_num_rows($stageservicecon)>0){
+					while($service=mysqli_fetch_assoc($stageservicecon)){
+						$block=$block."<div class='block'>$service[serviceDescription]</div>";
+					}
+					echo $block;
+				}
+			?>
 		</div>
 		<br>
 	</div>
@@ -82,9 +96,15 @@ $decoservicecon=mysqli_query($connection, $decoservicequery);
 	<div class="frame" style="background-color:rgba(255,103,0,0.4)">
 		<div class="frame-header">Tents</div>
 		<div class="frame-content">
-			<div class="block">Company 1</div>
-			<div class="block">Company 2</div>
-			<div class="block">Company 3</div>
+			<?php
+				$block="";
+				if(mysqli_num_rows($tentservicecon)>0){
+					while($service=mysqli_fetch_assoc($tentservicecon)){
+						$block=$block."<div class='block'>$service[serviceDescription]</div>";
+					}
+					echo $block;
+				}
+			?>
 		</div>
 		<br>
 	</div>
