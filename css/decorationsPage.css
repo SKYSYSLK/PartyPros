@@ -31,14 +31,14 @@
 	min-width: 350px;
 	min-height: 100px;
 	line-height: 100px;
-	font-size: 30px;
+	font-size: 20px;
 	background-color: rgba(255,255,255,0.4);
 	border: 1px solid gray;
 	border-radius: 5px;
 }
 
 .block:hover {
-	font-size: 35px;
+	font-size: 22px;
 	background-color: rgba(255,255,255,0.6);
 	border: 1px solid gray;
 }

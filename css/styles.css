@@ -47,6 +47,7 @@ body {
     padding: 16px;
     font-size: 16px;
     border: none;
+    border-radius: 10px;
 }
 
 .dropdown {
@@ -88,6 +89,7 @@ body {
     padding: 16px;
     font-size: 16px;
     border: none;
+    border-radius: 10px;
 }
 .loginSignUp{
 	 position: relative;

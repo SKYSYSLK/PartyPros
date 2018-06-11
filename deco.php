@@ -1,10 +1,16 @@
 <?php
 
 session_start();
+require_once('inc/config.php');
 
 if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 	header("location: login.php");
 }
+
+// -----------------SELECT Quaries--------------------------------//
+// Get Deco Services
+$decoservicequery="SELECT * FROM services WHERE serviceType='floral-deco' LIMIT 3";
+$decoservicecon=mysqli_query($connection, $decoservicequery);
 
 ?>
 
@@ -48,9 +54,17 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
 	<div class="frame" style="background-color:rgba(255,103,0,0.4);">
 		<div class="frame-header">Floral Decorations</div>
 		<div class="frame-content">
-			<div class="block">Shop 1</div>
-			<div class="block">Shop 2</div>
-			<div class="block">Shop 3</div>
+
+			<?php
+				$block="";
+				if(mysqli_num_rows($decoservicecon)>0){
+					while($service=mysqli_fetch_assoc($decoservicecon)){
+						//var_dump($service);
+						$block=$block."<div class='block'>$service[serviceDescription]</div>";
+					}
+					echo $block;
+				}
+			?>
 		</div>
 		<br>
 	</div>
