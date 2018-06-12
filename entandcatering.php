@@ -28,6 +28,7 @@ $catitemcon=mysqli_query($connection, $catitemquery);
 	<title>Entertainments And Catering</title>
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<link rel="stylesheet" type="text/css" href="./css/decorationsPage.css">
+	<script type="text/javascript" src="./javascript/jquery.min.js"></script>
 </head>
 
 <body>
@@ -66,7 +67,9 @@ $catitemcon=mysqli_query($connection, $catitemquery);
 				$block="";
 				if(mysqli_num_rows($djitemcon)>0){
 					while($item=mysqli_fetch_assoc($djitemcon)){
-						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
+						$block=$block."<div class='block' type='submit'>$item[itemName]<br>RS. $item[itemPrice]".
+						"<br><br><button onclick='addToCart($item[itemID])'> ADD TO CART </button>".
+						"</div>";
 					}
 					echo $block;
 				}
@@ -83,7 +86,9 @@ $catitemcon=mysqli_query($connection, $catitemquery);
 				$block="";
 				if(mysqli_num_rows($entitemcon)>0){
 					while($item=mysqli_fetch_assoc($entitemcon)){
-						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
+						$block=$block."<div class='block' type='submit'>$item[itemName]<br>RS. $item[itemPrice]".
+						"<br><br><button onclick='addToCart($item[itemID])'> ADD TO CART </button>".
+						"</div>";
 					}
 					echo $block;
 				}
@@ -108,7 +113,9 @@ $catitemcon=mysqli_query($connection, $catitemquery);
 				$block="";
 				if(mysqli_num_rows($catitemcon)>0){
 					while($item=mysqli_fetch_assoc($catitemcon)){
-						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
+						$block=$block."<div class='block' type='submit'>$item[itemName]<br>RS. $item[itemPrice]".
+						"<br><br><button onclick='addToCart($item[itemID])'> ADD TO CART </button>".
+						"</div>";
 					}
 					echo $block;
 				}
@@ -118,6 +125,6 @@ $catitemcon=mysqli_query($connection, $catitemquery);
 	</div>
 
 </div>
-
+<script type="text/javascript" src="./javaScript/mycart.js"></script>
 </body>
 </html>

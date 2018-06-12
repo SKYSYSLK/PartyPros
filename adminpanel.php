@@ -229,10 +229,10 @@ elseif(isset($_POST['submitAdmin'])){
 			<table>
 				<tr><button id="btnAddOrder" class="btnAddition">ADD A NEW ORDER</button></tr>
 				<tr>
-					<th>Item</th>
-					<th>Customer</th>
-					<th>count</th>
-					<th>price</th>
+					<th>Invoice No</th>
+					<th>Item ID</th>
+					<th>Customer ID</th>
+					<th>Count</th>
 					<th>Action</th>
 				</tr>
 				<!--Get table data from the DB-->
