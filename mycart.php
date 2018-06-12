@@ -134,7 +134,7 @@ $tcon=mysqli_query($connection, $tquery);
 				}
 			?>
 
-		    <input type="submit" value="Place My Order" name="order">
+		    <input type="button" value="Place My Order" name="order" onclick="pay()">
 		  </form>
 		</div>
 	</div>

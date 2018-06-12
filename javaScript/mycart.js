@@ -26,3 +26,7 @@ function clearCart() {
 
 	});
 }
+
+function pay() {
+	alert("You have successfully place the order. \n  Thank You !");
+}
