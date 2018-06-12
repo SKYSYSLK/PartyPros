@@ -34,6 +34,7 @@ $tcon=mysqli_query($connection, $tquery);
 ?>
 
 <!DOCTYPE html>
+
 <html>
 <head>
 	<title>My Cart</title>
@@ -68,10 +69,10 @@ $tcon=mysqli_query($connection, $tquery);
 	</div>
 
 	<div class="frame" style="background-color:rgba(255,103,0,0.4);">
-		<div class="frame-content">
+		<div class="frame-content" style="margin-left: 385px;">
 			<table>
 				<tr>
-					<th>Item Name</th>
+					<th id="itemName">Item Name</th>
 					<th>Item Count</th>
 					<th>Item Price</th>
 				</tr>
@@ -134,7 +135,7 @@ $tcon=mysqli_query($connection, $tquery);
 				}
 			?>
 
-		    <input type="button" value="Place My Order" name="order" onclick="pay()">
+		    <input id="orderbtn" type="button" value="Place My Order" name="order" onclick="pay()">
 		  </form>
 		</div>
 	</div>

@@ -33,6 +33,10 @@ $ordercon=mysqli_query($connection, $orderquery);
 $adminquery="SELECT * FROM users WHERE type=0";
 $admincon=mysqli_query($connection, $adminquery);
 
+// Get all Items
+$itemquery="SELECT * FROM items";
+$itemcon=mysqli_query($connection, $itemquery);
+
 //-----------------------CLIENT Quaries--------------------------//
 if(isset($_POST['clientsubmit'])){
 	$name=$_POST['clientname'];
@@ -77,6 +81,17 @@ elseif(isset($_POST['serviceSubmit'])){
 	header("location: adminpanel.php");
 }
 
+//--------------------Item Quaries--------------------------//
+elseif(isset($_POST['submititem'])){
+	$id=$_POST['itemid'];
+	$name=$_POST['itemname'];
+	$type=$_POST['itemtype'];
+	$price=$_POST['itemprice'];
+	$itemquery="INSERT INTO items (itemID, itemName, itemType, itemPrice) VALUES('$id', '$name','$type','$price')";
+	//echo $itemquery;
+	$insquery=mysqli_query($connection, $itemquery);
+	header("location: adminpanel.php");
+}
 //-----------------------ORDER Quaries--------------------------//
 elseif(isset($_POST['submitorder'])){
 	$invoice=$_POST['invoiceid'];
@@ -88,7 +103,6 @@ elseif(isset($_POST['submitorder'])){
 	$insquery=mysqli_query($connection, $orderquery);
 	header("location: adminpanel.php");
 }
-
 
 //-----------------------ADMIN Quaries--------------------------//
 elseif(isset($_POST['submitAdmin'])){
@@ -120,6 +134,7 @@ elseif(isset($_POST['submitAdmin'])){
 		<div id="tabClients" class="tab" onclick="showTable(1)">Clients</div>
 		<div id="tabCustomers" class="tab" onclick="showTable(2)">Customers</div>
 		<div id="tabServices" class="tab" onclick="showTable(3)">Services</div>
+		<div id="tabItems" class="tab" onclick="showTable(6)">Items</div>
 		<div id="tabOrders" class="tab" onclick="showTable(5)">Orders</div>
 		<div id="tabAdmins" class="tab" onclick="showTable(4)">Admins</div>
 	</div>
@@ -215,6 +230,39 @@ elseif(isset($_POST['submitAdmin'])){
 								<td>
 									<button onclick='editservice($service[serviceID])'>EDIT</button>
 									<a href='queryboxes/delete.php?service=$service[serviceID]'><button>DELETE</button></a>
+								</td>
+							</tr>";
+						}
+						echo $row;
+					}
+				?>
+			</table>
+		</div>
+
+		<div id="items_table" style="display: none;">
+			<div class="table-title">Items Managing</div>
+			<table>
+				<tr><button id="btnAddItem" class="btnAddition">ADD A NEW ITEM</button></tr>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Price</th>
+					<th>Action</th>
+				</tr>
+				<!--Get table data from the DB-->
+				<?php
+					$row="";
+					if(mysqli_num_rows($servicecon)>0){
+						while($item=mysqli_fetch_assoc($itemcon)){
+							$row=$row."<tr>
+								<td>$item[itemID]</td>
+								<td>$item[itemName]</td>
+								<td>$item[itemType]</td>
+								<td>$item[itemPrice]</td>
+								<td>
+									<button onclick='edititem($item[itemID])'>EDIT</button>
+									<a href='queryboxes/delete.php?item=$item[itemID]'><button>DELETE</button></a>
 								</td>
 							</tr>";
 						}
@@ -382,6 +430,25 @@ elseif(isset($_POST['submitAdmin'])){
 	</div>
 </div>
 
+<!-- item adding model box -->
+<div id="additem" class="model">
+	<div class="modal-content">
+		<form method="POST" action="adminpanel.php">
+			<div class="modal-header"> Add a New item </div>
+			<div class="modal-body">
+				<div class="modal-property">Item ID<input type="text" name="itemid"></div>
+				<div class="modal-property">Name<input type="text" name="itemname"></div>
+				<div class="modal-property">Type<input type="text" name="itemtype"></div>
+				<div class="modal-property">price<input type="text" name="itemprice"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="btnCancelAdditem">Cancel</button>
+				<button type="submit" name="submititem">Save</button>
+			</div>
+		</form>
+	</div>
+</div>
+
 <!-- Service editing model box -->
 <div id="editservice" class="model">
 	<div class="modal-content">
@@ -484,6 +551,10 @@ function editcustomer(id) {
 }
 function editservice(id) {
 	var url="queryboxes/services.php?service="+id;
+    var myWindow = window.open(url, "", "width=700,height=400");
+}
+function edititem(id) {
+	var url="queryboxes/item.php?item="+id;
     var myWindow = window.open(url, "", "width=700,height=400");
 }
 function editinvoice(id) {

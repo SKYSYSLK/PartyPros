@@ -7,8 +7,15 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
     header("location: login.php");
 }
 //connection with items table------
-$sql = "SELECT itemID,itemName, itemPrice FROM items WHERE itemType = 'venue' AND location ='Gampaha'";
-$itemcon=mysqli_query($connection,$sql);
+if(isset($_POST['submit'])){
+    $area=$_POST['event-area'];
+    $sql = "SELECT itemID,itemName, itemPrice FROM items WHERE itemType = 'venue' AND location ='$area'";
+    //echo $sql;
+    $itemcon=mysqli_query($connection,$sql);
+}else{
+    $sql = "SELECT itemID,itemName, itemPrice FROM items WHERE itemType = 'venue'";
+    $itemcon=mysqli_query($connection,$sql);
+}
 
 $connection->close();
 ?> 
@@ -52,16 +59,15 @@ $connection->close();
     </div>
 
     <div class="venue-select">
-        <form action="#" autocomplete="on"><!--autocomplete completes the input values based on values that the user has entered before -->
+        <form action="venueselection.php" method="POST" autocomplete="on"><!--autocomplete completes the input values based on values that the user has entered before -->
             <lable>Select Date</lable>
-            <input type="date" name="event-date" placeholder="Date of the event" required><br>
+            <input type="date" name="event-date" placeholder="Date of the event"><br>
             <lable>Select Time</lable>
-            <input type="time" name="event-time" placeholder="Time of the event" required><br>
+            <input type="time" name="event-time" placeholder="Time of the event"><br>
             <lable>Area Desired</lable>
-            
-            <input type="text" name="event-area" placeholder="Area desired" required><br>
+            <input type="text" name="event-area" placeholder="Area desired"><br>
             <lable>Event Duration</lable>
-            <input type="text" name="event-duration" placeholder="Duration" required><br>
+            <input type="text" name="event-duration" placeholder="Duration"><br>
             <input type="submit" name="submit" value="Submit"><br>
         </form>
     </div>
@@ -72,20 +78,39 @@ $connection->close();
             <div class="block">Shop 1
             <!--getting details from the database -->
             	<?php
-            	if ($itemcon->num_rows > 0) {
-    				// output data of each row
-    				while($row = $itemcon->fetch_assoc()) {
-        			echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
-   				 }
-
-				} else {
-    				echo "Sorry there is not a venue which matched with your location";
-				}
-
+                	if ($itemcon->num_rows > 0) {
+        				// output data of each row
+        				$row = $itemcon->fetch_assoc();
+            			echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
+       				}else {
+        				echo "Sorry there is not a venue which matched with your location";
+    				}
 				?>
             </div>
-            <div class="block">Shop 2</div>
-            <div class="block">Shop 3</div>
+            <div class="block">Shop 2
+                <?php
+                if ($itemcon->num_rows > 0) {
+                    // output data of each row
+                    $row = $itemcon->fetch_assoc();
+                    echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
+                } else {
+                    echo "Sorry there is not a venue which matched with your location";
+                }
+
+                ?>
+            </div>
+            <div class="block">Shop 3
+                <?php
+                if ($itemcon->num_rows > 0) {
+                    // output data of each row
+                    $row = $itemcon->fetch_assoc();
+                    echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
+                } else {
+                    echo "Sorry there is not a venue which matched with your location";
+                }
+
+                ?>
+            </div>
         </div>
     </div>    
             
