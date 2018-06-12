@@ -76,14 +76,14 @@ $connection->close();
     <div class="frame">
         <div class="frame-header">Suggestions</div>
         <div class="frame-content">
-            <div class="block">Shop 1<br><br>
+            <div class="block">Venue 1<br><br>
             <!--getting details from the database -->
                 <div id="venue">
                     <?php
                     if ($itemcon->num_rows > 0) {
                         // output data of each row
                         $row = $itemcon->fetch_assoc();
-                        echo "<br> ". $row["itemName"]. "<br><br>"."Price :" . $row["itemPrice"] . "<br>";
+                        echo "<br> ". $row["itemName"]. "<br><br>"."Price : " . $row["itemPrice"] . "<br>";
                         echo "<br><br><button onclick='addToCart($row[itemID])'> ADD TO CART </button>";
                     } else {
                         echo "Sorry there is not a venue which matched with your location";
@@ -93,13 +93,13 @@ $connection->close();
                 </div>
             </div>
             
-            <div class="block">Shop 2 <br><br>
+            <div class="block">Venue 2 <br><br>
                 <div id="venue">
                     <?php
                     if ($itemcon->num_rows > 0) {
                         // output data of each row
                         $row = $itemcon->fetch_assoc();
-                        echo "<br> ". $row["itemName"]. "<br><br>"."Price :" . $row["itemPrice"] . "<br>";
+                        echo "<br> ". $row["itemName"]. "<br><br>"."Price : " . $row["itemPrice"] . "<br>";
                         echo "<br><br><button onclick='addToCart($row[itemID])'> ADD TO CART </button>";
                     } else {
                         echo "Sorry there is not a venue which matched with your location";
@@ -107,13 +107,13 @@ $connection->close();
                     ?>
                 </div>
             </div>
-            <div  class="block">Shop 3<br><br>
+            <div  class="block">Venue 3<br><br>
                 <div id="venue">
                     <?php
                     if ($itemcon->num_rows > 0) {
                         // output data of each row
                         $row = $itemcon->fetch_assoc();
-                        echo "<br> ". $row["itemName"]. "<br><br>"."Price :" . $row["itemPrice"] . "<br>";
+                        echo "<br> ". $row["itemName"]. "<br><br>"."Price : " . $row["itemPrice"] . "<br>";
                         echo "<br><br><button onclick='addToCart($row[itemID])'> ADD TO CART </button>";
                     } else {
                         echo "Sorry there is not a venue which matched with your location";
