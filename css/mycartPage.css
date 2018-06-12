@@ -107,7 +107,7 @@ input[type=email], select {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+form button {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -118,7 +118,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+form button:hover {
     background-color: #45a049;
 }
 
@@ -143,3 +143,7 @@ input[type=submit]:hover {
 	border-radius: 10px;
 	background: rgba(255,255,0,0.6);
 }
+
+/*----------- Table Styles start ----------------*/
+
+/*----------- Table Styles end ----------------*/
