@@ -3,9 +3,13 @@
 session_start();
 require_once('inc/config.php');
 
-if(!isset($_SESSION['usertype'])&&($_SESSION['usertype']==2)){
+if(!isset($_SESSION['usertype'])){
+	header("location: login.php");
+}
+if($_SESSION['usertype']==2){
 	header("location: index.php");
 }
+
 
 // -----------------SELECT Quaries--------------------------------//
 // Get all Clients
@@ -225,10 +229,10 @@ elseif(isset($_POST['submitAdmin'])){
 			<table>
 				<tr><button id="btnAddOrder" class="btnAddition">ADD A NEW ORDER</button></tr>
 				<tr>
-					<th>Item</th>
-					<th>Customer</th>
-					<th>count</th>
-					<th>price</th>
+					<th>Invoice No</th>
+					<th>Item ID</th>
+					<th>Customer ID</th>
+					<th>Count</th>
 					<th>Action</th>
 				</tr>
 				<!--Get table data from the DB-->
@@ -408,7 +412,7 @@ elseif(isset($_POST['submitAdmin'])){
 				<div class="modal-property">Item Count<input type="text" name="itemcount"></div>
 			</div>
 			<div class="modal-footer">
-				<button id="btnCancelAddService">Cancel</button>
+				<button id="btnCancelAddOrder">Cancel</button>
 				<button type="submit" name="submitorder">Submit</button>
 			</div>
 		</form>
