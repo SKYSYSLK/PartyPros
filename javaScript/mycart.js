@@ -4,10 +4,10 @@ function addToCart(itemid) {
 		url: './mycart.php',
 		data: ({itemid:itemid}),
 		success: function() {
-			//alert(itemid);
+			//alert("Added To the Cart...");
 		},
 		error: function() {
-			alert("not gone");
+			//alert("not gone");
 		}
 
 	});
@@ -21,7 +21,7 @@ function clearCart() {
 			location.reload();
 		},
 		error: function() {
-			alert("not gone");
+			//alert("not gone");
 		}
 
 	});
