@@ -6,6 +6,7 @@ function showTable(tn) {
 	var tableServices = document.getElementById("service_table");
 	var tableAdmins = document.getElementById("admin_table");
 	var tableOrders = document.getElementById("order_table");
+	var tableItems = document.getElementById("items_table");
 	var panelWelcome = document.getElementById("welcome_panel");
 
 	if(tn === 1) {
@@ -14,6 +15,7 @@ function showTable(tn) {
 		tableServices.style.display = "none";
 		tableAdmins.style.display = "none";
 		tableOrders.style.display = "none";
+		tableItems.style.display = "none";
 		panelWelcome.style.display = "none";
 
 	} 
@@ -23,6 +25,7 @@ function showTable(tn) {
 		tableServices.style.display = "none";
 		tableAdmins.style.display = "none";
 		tableOrders.style.display = "none";
+		tableItems.style.display = "none";
 		panelWelcome.style.display = "none";
 	} 
 	if(tn === 3) {
@@ -31,6 +34,7 @@ function showTable(tn) {
 		tableServices.style.display = "block";
 		tableAdmins.style.display = "none";
 		tableOrders.style.display = "none";
+		tableItems.style.display = "none";
 		panelWelcome.style.display = "none";
 	} 
 	if(tn === 4) {
@@ -39,6 +43,7 @@ function showTable(tn) {
 		tableServices.style.display = "none";
 		tableAdmins.style.display = "block";
 		tableOrders.style.display = "none";
+		tableItems.style.display = "none";
 		panelWelcome.style.display = "none";
 	} 
 	if(tn === 5) {
@@ -47,6 +52,16 @@ function showTable(tn) {
 		tableServices.style.display = "none";
 		tableAdmins.style.display = "none";
 		tableOrders.style.display = "block";
+		tableItems.style.display = "none";
+		panelWelcome.style.display = "none";
+	} 
+	if(tn === 6) {
+		tableClients.style.display = "none";
+		tableCustomers.style.display = "none";
+		tableServices.style.display = "none";
+		tableAdmins.style.display = "none";
+		tableOrders.style.display = "none";
+		tableItems.style.display = "block";
 		panelWelcome.style.display = "none";
 	} 
 
@@ -61,6 +76,7 @@ var mdlEditCustomer = document.getElementById("editcustomer");
 var mdlAddService = document.getElementById("addservice");
 var mdlEditService = document.getElementById("editservice");
 var mdlAddOrder=document.getElementById("addorder");
+var mdlAddItem=document.getElementById("additem");
 var mdlAddAdmin = document.getElementById("addadmin");
 var mdlEditAdmin = document.getElementById("editadmin");
 
@@ -70,6 +86,7 @@ var btnAddCustomer = document.getElementById("btnAddCustomer");
 //var btnEditCustomer = document.getElementById("btnEditCustomer");
 var btnAddService = document.getElementById("btnAddService");
 var btnAddOrder = document.getElementById("btnAddOrder");
+var btnAddItem = document.getElementById("btnAddItem");
 //var btnEditService = document.getElementById("btnEditService");
 var btnAddAdmin = document.getElementById("btnAddAdmin");
 //var btnEditAdmin = document.getElementById("btnEditAdmin");
@@ -81,6 +98,7 @@ var btnCancelEditCustomer = document.getElementById("btnCancelEditCustomer");
 var btnCancelAddService = document.getElementById("btnCancelAddService");
 var btnCancelEditService = document.getElementById("btnCancelEditService");
 var btnCalcelAddOrder = document.getElementById("btnCancelAddOrder");
+var btnCalcelAddItem = document.getElementById("btnCancelAddItem");
 var btnCancelAddAdmin = document.getElementById("btnCancelAddAdmin");
 var btnCancelEditAdmin = document.getElementById("btnCancelEditAdmin");
 
@@ -147,6 +165,14 @@ btnAddOrder.onclick = function() {
 }
 btnCancelAddOrder.onclick = function() {
 	mdlAddOrder.style.display="none";
+}
+
+/* function for item model */
+btnAddItem.onclick = function() {
+	mdlAddItem.style.display="block";
+}
+btnCancelAddItem.onclick = function() {
+	mdlAddItem.style.display="none";
 }
 
 /* function for add service model */
