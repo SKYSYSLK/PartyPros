@@ -27,7 +27,8 @@ $connection->close();
 <head>
     <title>Venue Selection</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css ">
-    <link rel="stylesheet" type="text/css" href="./css/venueSelection.css ">      
+    <link rel="stylesheet" type="text/css" href="./css/venueSelection.css "> 
+    <script type="text/javascript" src="./javascript/jquery.min.js"></script>     
 </head>
 
 <body>
@@ -82,6 +83,7 @@ $connection->close();
         				// output data of each row
         				$row = $itemcon->fetch_assoc();
             			echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
+                        echo "<br><br><button onclick='addToCart($row[itemID])'> ADD TO CART </button>";
        				}else {
         				echo "Sorry there is not a venue which matched with your location";
     				}
@@ -93,6 +95,8 @@ $connection->close();
                     // output data of each row
                     $row = $itemcon->fetch_assoc();
                     echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
+                    echo "<br><br><button onclick='addToCart($row[itemID])'> ADD TO CART </button>";
+
                 } else {
                     echo "Sorry there is not a venue which matched with your location";
                 }
@@ -105,6 +109,7 @@ $connection->close();
                     // output data of each row
                     $row = $itemcon->fetch_assoc();
                     echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
+                    echo "<br><br><button onclick='addToCart($row[itemID])'> ADD TO CART </button>";
                 } else {
                     echo "Sorry there is not a venue which matched with your location";
                 }
@@ -118,6 +123,6 @@ $connection->close();
         <footer class="venue-footer">Copyright &copy; SKY</footer>
     </div>
 </div> 
-
+<script type="text/javascript" src="./javaScript/mycart.js"></script>
 </body>
 </html>
