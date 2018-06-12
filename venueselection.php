@@ -125,10 +125,6 @@ $connection->close();
             </div>
         </div>
     </div>    
-            
-    <div class=footer>
-        <footer class="venue-footer">Copyright &copy; SKY</footer>
-    </div>
 </div> 
 <script type="text/javascript" src="./javaScript/mycart.js"></script>
 </body>

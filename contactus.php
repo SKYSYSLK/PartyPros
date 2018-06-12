@@ -37,11 +37,6 @@
             <input type="submit" name="submit" value="Send"><br>
         </form>
     </div>
-            
-    
-    <div class=footer>
-        <footer class="venue-footer">Copyright &copy; SKY</footer>
-    </div>
 </div> 
 
 </body>
