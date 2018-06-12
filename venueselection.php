@@ -75,41 +75,49 @@ $connection->close();
     <div class="frame">
         <div class="frame-header">Suggestions</div>
         <div class="frame-content">
-            <div class="block">Shop 1
+            <div class="block">Shop 1<br><br>
             <!--getting details from the database -->
-            	<?php
-                	if ($itemcon->num_rows > 0) {
-        				// output data of each row
-        				$row = $itemcon->fetch_assoc();
-            			echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
-       				}else {
-        				echo "Sorry there is not a venue which matched with your location";
-    				}
-				?>
-            </div>
-            <div class="block">Shop 2
-                <?php
-                if ($itemcon->num_rows > 0) {
-                    // output data of each row
-                    $row = $itemcon->fetch_assoc();
-                    echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
-                } else {
-                    echo "Sorry there is not a venue which matched with your location";
-                }
+                <div id="venue">
+                    <?php
+                    if ($itemcon->num_rows > 0) {
+                        // output data of each row
+                        $row = $itemcon->fetch_assoc();
+                        echo "<br> ". $row["itemName"]. "<br><br>"."Price :" . $row["itemPrice"] . "<br>";
+                    } else {
+                        echo "Sorry there is not a venue which matched with your location";
+                    }
 
-                ?>
+                    ?>
+                </div>
             </div>
-            <div class="block">Shop 3
-                <?php
-                if ($itemcon->num_rows > 0) {
-                    // output data of each row
-                    $row = $itemcon->fetch_assoc();
-                    echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
-                } else {
-                    echo "Sorry there is not a venue which matched with your location";
-                }
+            
+            <div class="block">Shop 2 <br><br>
+                <div id="venue">
+                    <?php
+                    if ($itemcon->num_rows > 0) {
+                        // output data of each row
+                        $row = $itemcon->fetch_assoc();
+                        echo "<br> ". $row["itemName"]. "<br><br>"."Price :" . $row["itemPrice"] . "<br>";
+                    } else {
+                        echo "Sorry there is not a venue which matched with your location";
+                    }
 
-                ?>
+                    ?>
+                </div>
+            </div>
+            <div  class="block">Shop 3<br><br>
+                <div id="venue">
+                    <?php
+                    if ($itemcon->num_rows > 0) {
+                        // output data of each row
+                        $row = $itemcon->fetch_assoc();
+                        echo "<br> ". $row["itemName"]. "<br><br>"."Price :" . $row["itemPrice"] . "<br>";
+                    } else {
+                        echo "Sorry there is not a venue which matched with your location";
+                    }
+
+                    ?>
+                </div>
             </div>
         </div>
     </div>    
