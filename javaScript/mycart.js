@@ -2,9 +2,23 @@ function addToCart(itemid) {
 	$.ajax({
 		type: 'POST',
 		url: './mycart.php',
-		data: {itemid:itemid},
+		data: ({itemid:itemid}),
 		success: function() {
-			//alert("gone");
+			//alert(itemid);
+		},
+		error: function() {
+			alert("not gone");
+		}
+
+	});
+}
+
+function clearCart() {
+	$.ajax({
+		type: 'POST',
+		url: './clearcart.php',
+		success: function() {
+			location.reload();
 		},
 		error: function() {
 			alert("not gone");

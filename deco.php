@@ -87,7 +87,9 @@ $tentitemcon=mysqli_query($connection, $tentitemquery);
 				$block="";
 				if(mysqli_num_rows($stageitemcon)>0){
 					while($item=mysqli_fetch_assoc($stageitemcon)){
-						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
+						$block=$block."<div class='block' type='submit'>$item[itemName]<br>RS. $item[itemPrice]".
+						"<br><br><button onclick='addToCart($item[itemID])'> ADD TO CART </button>".
+						"</div>";
 					}
 					echo $block;
 				}
@@ -104,7 +106,9 @@ $tentitemcon=mysqli_query($connection, $tentitemquery);
 				$block="";
 				if(mysqli_num_rows($tentitemcon)>0){
 					while($item=mysqli_fetch_assoc($tentitemcon)){
-						$block=$block."<div class='block'>$item[itemName]<br>RS. $item[itemPrice]</div>";
+						$block=$block."<div class='block' type='submit'>$item[itemName]<br>RS. $item[itemPrice]".
+						"<br><br><button onclick='addToCart($item[itemID])'> ADD TO CART </button>".
+						"</div>";
 					}
 					echo $block;
 				}
