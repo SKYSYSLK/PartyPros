@@ -8,17 +8,11 @@
 </head>
 
 <body>
-<div class="page">
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<div class="page"><br><br><br><br><br>
     <div class="login">
         
         <form action="#" autocomplete="on"><!--autocomplete completes the input values based on values that the user has entered before -->
-            <lable id="formname">EXTARVAGANCE</lable>
+            <br><br><br><br><lable id="formname">EXTARVAGANCE</lable>
             <input type="text" name="uname" placeholder="Enter your name" required><br>
             <input type="password" name="pwd" placeholder="Enter your password" required><br>
             <lable id="forgot"><a href="#">forgot password?</a></lable>
