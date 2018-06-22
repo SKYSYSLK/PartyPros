@@ -28,3 +28,25 @@ body {
 	font-size: 70px;
 	color: black;
 }
+
+/*footer menu*/
+.footer{
+	display: block;
+	margin: 5px;
+	min-height: 20px;
+	border: 1px solid darkorange;
+	border-radius: 10px;
+	text-align: center;
+
+}
+.footer a{
+	font-size: 15px;
+	text-decoration: none;
+	color: black;
+	margin-right: 10px;
+	margin-left: 10px;
+	
+}
+.footer a:hover{
+	color: green;
+}
