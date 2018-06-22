@@ -27,6 +27,7 @@
             <lable>Select Time</lable>
             <input type="time" name="event-time" placeholder="Time of the event" required><br>
             <lable>Area Desired</lable>
+            
             <input type="text" name="event-area" placeholder="Area desired" required><br>
             <lable>Event Duration</lable>
             <input type="text" name="event-duration" placeholder="Duration" required><br>

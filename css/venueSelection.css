@@ -9,34 +9,35 @@
 }
 
 .venue-select{
-    border-radius: 5px;
     margin: auto;
     padding: 20px;
+    width: 50%;
+    background-color: rgba(255,255,255,0.8) ;
+    border: 2px solid gray;
     box-sizing: border-box;
 }
 
 input:not([type=submit]){
     display: block;
     margin: auto;
-    height: 50px;
-    width: 50%;
+    height: 60px;
+    width: 80%;
     padding: 10px 10px 10px 10px;   
     background-color: white;
     border:1px solid  gray;
-    border-radius: 5px;
     box-sizing: border-box;
 }
 input[type=submit]{
     display: block;
     margin: auto;
-    height: 70px;
-    width: 50%;
+    height: 60px;
+    width: 80%;
     padding: 10px 10px 10px 10px;   
-    background-color: 249, 252, 8,0.8;
-    border:1px solid;
-    border-radius: 10px;
+    background-color: green;
+    border:1px solid white;
     box-sizing: border-box;
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+    color: white;
 }
 
 input[type=submit]:hover{
@@ -46,7 +47,7 @@ lable{
     display: block;
     margin: auto;
     height: 20%;
-    width: 50%;
+    width: 80%;
     padding: 5px;
     font-size: 1.5vw;
 }
