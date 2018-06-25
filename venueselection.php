@@ -7,7 +7,8 @@ if(!(isset($_SESSION['usertype'])&&($_SESSION['usertype']=2))){
     header("location: login.php");
 }
 //connection with items table------
-$sql = "SELECT itemID,itemName, itemPrice FROM items WHERE itemType = 'venue' AND location ='Gampaha'";
+$loc=$_POST["event-area"];
+$sql = "SELECT serviceImages.imageID FROM serives,servicImages WHERE serivecType = 'venue' AND servicelocation ='$loc' AND service.serviceID=serviceImages.serviceID";
 $itemcon=mysqli_query($connection,$sql);
 
 $connection->close();
@@ -75,7 +76,7 @@ $connection->close();
             	if ($itemcon->num_rows > 0) {
     				// output data of each row
     				while($row = $itemcon->fetch_assoc()) {
-        			echo "<br> id: ". $row["itemID"]. " - Name: ". $row["itemName"]. " " . $row["itemPrice"] . "<br>";
+        			echo "<br>". $row["imageID"]. "<br>";
    				 }
 
 				} else {

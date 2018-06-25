@@ -95,7 +95,8 @@ CREATE TABLE `serviceimages` (
 CREATE TABLE `services` (
   `serviceID` varchar(30) NOT NULL,
   `serviceType` varchar(100) NOT NULL,
-  `serviceDescription` varchar(255) NOT NULL
+  `serviceDescription` varchar(255) NULL,
+	`serviceLocation` varchar(200) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
