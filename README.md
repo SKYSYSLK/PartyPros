@@ -48,15 +48,6 @@ PartyPros is an party and event planning system which offers a proven solution f
 ![Admin Page2](https://raw.githubusercontent.com/SKYSYSLK/PartyPros/master/partypros_readme_assets/partypros05.PNG)
 
 ### Developed By SKYSYS Group
-
-<table align="center">
-<tr>
-<td align="center">
-<img src="https://raw.githubusercontent.com/SKYSYSLK/PartyPros/master/partypros_readme_assets/logo-01.png" width=300>
-</td>
-</tr>
-</table>
-<br/>
 <table>
 <tr>
 <td align="center"><img src="https://avatars0.githubusercontent.com/u/12469768?s=400&v=4" width=200></td>
@@ -71,6 +62,12 @@ PartyPros is an party and event planning system which offers a proven solution f
 <td align="center"><a href="https://github.com/RavinduSachintha">Ravindu Sachintha</a></td>
 <td align="center"><a href="https://github.com/AsithaIndrajith">Asitha Indrajith</a></td>
 <td align="center"><a href="https://github.com/ShehanKule">Shehan Kulathilake</a></td>
+</tr>
+</table>
+
+<table align="center">
+<td align="center">
+<img src="https://raw.githubusercontent.com/SKYSYSLK/PartyPros/master/partypros_readme_assets/logo-01.png" width=300>
 </tr>
 </table>
 
