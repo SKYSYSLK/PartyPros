@@ -1,3 +1,8 @@
+<div>
+<img align="right" style="border: 1px solid black;" src="https://github.com/SKYSYSLK/PartyPros/blob/master/partypros_readme_assets/logo-01.png" width=200>
+</div>
+<br>
+
 # PartyPros
 ## An online system for event planning.
 
@@ -13,7 +18,7 @@ PartyPros is an party and event planning system which offers a proven solution f
 ### User Function
 - ***Administrators 	:*** Allow Adding Deleting and Editing system data.
 - ***Clients		:*** Allow Adding Deleting and Editing service details.
-- **Customers** :Allow to Purchase items. Get invoices and to update their profiles.
+- ***Customers          :*** Allow to Purchase items. Get invoices and to update their profiles.
 
 ### Business Function
 - Initiate Client/End user registration via forms. 
@@ -62,12 +67,6 @@ PartyPros is an party and event planning system which offers a proven solution f
 <td align="center"><a href="https://github.com/RavinduSachintha">Ravindu Sachintha</a></td>
 <td align="center"><a href="https://github.com/AsithaIndrajith">Asitha Indrajith</a></td>
 <td align="center"><a href="https://github.com/ShehanKule">Shehan Kulathilake</a></td>
-</tr>
-</table>
-
-<table align="center">
-<td align="center">
-<img src="https://raw.githubusercontent.com/SKYSYSLK/PartyPros/master/partypros_readme_assets/logo-01.png" width=300>
 </tr>
 </table>
 
